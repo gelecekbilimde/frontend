@@ -1,0 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:thin,extrelight,light,regular,regularitalic,medium,mediumitalic,semibold,semibolditalic,bold,bolditalic');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

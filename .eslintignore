@@ -1,0 +1,17 @@
+## Modules and libraries 
+node_modules/
+dist/
+
+## Environment
+src/vite-env.d.ts
+env.d.ts
+
+## Linter / Formatter
+.prettierrc
+.eslintrc
+.stylelintrc
+
+## Config files
+vite.config.ts
+tailwind.config.js
+postcss.config.js

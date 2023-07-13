@@ -94,10 +94,13 @@ This project is the frontend of the Gelecek Bilimde website. It is built with Re
 ### Add shdcn/ui component
 
 1. **NPM**
-   ''sh
-   npx shadcn-ui@latest add [component-name]
-   ''
+
+    ```sh
+    npx shadcn-ui@latest add [component-name]
+    ```
+
 2. **PNPM**
-    ''sh
+
+    ```sh
     pnpm dlx shadcn-ui@latest add [component-name]
-    ''
+    ```

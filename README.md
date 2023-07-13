@@ -13,6 +13,9 @@ This project is the frontend of the Gelecek Bilimde website. It is built with Re
   - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
+  - [Helpful Links](#helpful-links)
+  - [How to](#how-to)
+    - [Add shdcn/ui component](#add-shdcnui-component)
 
 ## Built With
 
@@ -78,3 +81,23 @@ This project is the frontend of the Gelecek Bilimde website. It is built with Re
     ```
 
 4. **Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.**
+
+## Helpful Links
+
+- [Vite Docs](https://vitejs.dev/guide/)
+- [shdcn/ui Docs](https://ui.shadcn.com/docs)
+- [TanStack/react-query Docs](https://tanstack.com/query/v4/docs/react/overview)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+
+## How to
+
+### Add shdcn/ui component
+
+1. **NPM**
+   ''sh
+   npx shadcn-ui@latest add [component-name]
+   ''
+2. **PNPM**
+    ''sh
+    pnpm dlx shadcn-ui@latest add [component-name]
+    ''

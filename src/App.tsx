@@ -1,17 +1,17 @@
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Router from './router'
+import Router from './router';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-function App() {
+function App(): JSX.Element {
   return (
     <>
-    <Header />
-    <main>
-      <Router />
-    </main>
-    <Footer />
+      <Header />
+      <main>
+        <Router />
+      </main>
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -5,8 +5,9 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 // eslint-disable-next-line import/named
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import App from './App.tsx';
 import './index.css';
+import App from './App.tsx';
+import SEO from './seo.tsx';
 
 const queryClient = new QueryClient();
 
@@ -20,6 +21,7 @@ const root = createRoot(dom);
 
 root.render(
   <React>
+    <SEO />
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <App />

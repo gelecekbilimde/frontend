@@ -56,7 +56,7 @@
   ],
   "extends": [
     "eslint:recommended",
-    "standard-with-typescript",
+    // "standard-with-typescript", // Doesn't support @typescript-eslint@6.x.x yet
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",

@@ -15,7 +15,7 @@ const body = document.querySelector('body') as HTMLElement;
 body.className = 'flex justify-center h-screen w-full overflow-x-hidden overflow-y-scroll';
 
 const dom = document.querySelector('#root') as HTMLElement;
-dom.className = 'flex max-w-full flex-col';
+dom.className = 'flex flex-col max-w-screen-xl w-full';
 
 const root = createRoot(dom);
 

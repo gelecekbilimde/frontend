@@ -4,27 +4,6 @@
     "es2022": true,
     "node": true
   },
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [
-        ".ts",
-        ".tsx"
-      ]
-    },
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    },
-    "react": {
-      "version": "detect"
-    }
-  },
   "overrides": [
     {
       "files": [
@@ -46,7 +25,6 @@
     "react",
     "prettier",
     "tailwindcss",
-    "react-hooks",
     "jsx-a11y",
     "promise",
     "import",
@@ -56,13 +34,13 @@
   ],
   "extends": [
     "eslint:recommended",
-    // "standard-with-typescript", // Doesn't support @typescript-eslint@6.x.x yet
+    "next/core-web-vitals",
+    // "standard-with-typescript", // TODO: Uncomment this line when the issue is fixed
     "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:unicorn/recommended",
-    "plugin:react-hooks/recommended",
     "plugin:security/recommended",
     "plugin:promise/recommended",
     "plugin:import/recommended",
@@ -71,15 +49,9 @@
     "prettier"
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars" : "off",
-    "@typescript-eslint/no-misused-promises": [2, {
-      "checksVoidReturn": {
-        "attributes": false
-      }
-    }],
     "import/no-unresolved": "error",
     "n/no-missing-import": "off",
-    "no-unused-vars": "off",
+    "no-unused-vars": "warn",
     "no-unused-expressions": [
       "error",
       {

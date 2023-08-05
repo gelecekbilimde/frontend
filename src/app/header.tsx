@@ -1,12 +1,12 @@
-import { Link } from 'react-router-dom';
-import { Button } from './shadcn/ui/button';
+import Link from 'next/link';
+
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from './shadcn/ui/navigation-menu';
+} from '@/components/ui/navigation-menu';
 
 export default function Header(): JSX.Element {
   const links = [
@@ -40,7 +40,7 @@ export default function Header(): JSX.Element {
           <NavigationMenuList>
             {links.map((link) => (
               <NavigationMenuItem key={link.id}>
-                <Link to={link.path}>
+                <Link href={link.path}>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>{link.name}</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

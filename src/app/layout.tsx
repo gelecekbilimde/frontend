@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import Header from './header';
+import SideBar from './sidebar';
 
 const poppins = Poppins({
   subsets: ['latin', 'latin-ext'],
@@ -21,6 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
         <Header />
         <div className="flex flex-row">
+          <aside>
+            <SideBar />
+          </aside>
           <main>{children}</main>
         </div>
       </body>

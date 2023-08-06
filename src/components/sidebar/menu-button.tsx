@@ -11,7 +11,7 @@ export default function MenuButton({ children, icon, secondIcon, isChild, onClic
       className="flex min-w-[160px] gap-2 rounded-lg bg-cream px-2 py-1 transition-colors duration-200 hover:bg-neutral-300"
     >
       <div className="h-4 w-4">{icon}</div>
-      <div className={`text-sm font-semibold ${isChild ? 'ps-2' : ''}`}>{children}</div>
+      <div className={`text-sm ${isChild ? 'ps-2' : ''}`}>{children}</div>
       <div className="h-4 w-4">{secondIcon}</div>
     </button>
   );

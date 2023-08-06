@@ -22,9 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
         <Header />
         <div className="flex flex-row">
-          <aside>
-            <SideBar />
-          </aside>
+          <SideBar />
           <main>{children}</main>
         </div>
       </body>

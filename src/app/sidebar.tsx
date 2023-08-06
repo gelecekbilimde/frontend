@@ -8,6 +8,7 @@ interface Category {
   order: number;
   title: string;
   children: Category[];
+  isChild?: boolean;
 }
 
 export default function SideBar(): JSX.Element {
@@ -72,13 +73,22 @@ export default function SideBar(): JSX.Element {
 
   const menuHandler = (category: Category) => {
     if (category.children.length === 0) {
-      return <MenuLink key={category.id} title={category.title} />;
+      return (
+        <MenuLink key={category.id} isChild={category.isChild}>
+          {category.title}
+        </MenuLink>
+      );
     }
     return (
       <Collapser size={category.children.length} key={category.id} title={category.title}>
-        {category.children.map((child) => menuHandler({ ...child, title: `${child.title}` }))}
+        {category.children.map((child) => menuHandler({ ...child, title: `${child.title}`, isChild: true }))}
       </Collapser>
     );
   };
-  return <>{categories.map((category) => menuHandler(category))}</>;
+  return (
+    <aside className="py-2">
+      <h2 className="ps-4 text-lg font-semibold">Kategoriler</h2>
+      <div className="py-2">{categories.map((category) => menuHandler(category))}</div>
+    </aside>
+  );
 }

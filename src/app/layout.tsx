@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+import Header from './header';
 
 const poppins = Poppins({
   subsets: ['latin', 'latin-ext'],
@@ -16,8 +17,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
-      <body className={poppins.className}>{children}</body>
+    <html className={poppins.className} lang="tr">
+      <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
+        <Header />
+        <div className="flex flex-row">
+          <main>{children}</main>
+        </div>
+      </body>
     </html>
   );
 }

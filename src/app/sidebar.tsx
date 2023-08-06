@@ -1,7 +1,16 @@
-'use client';
-
 import Collapser from '@/components/sidebar/category-collapser';
 import MenuLink from '@/components/sidebar/menu-link';
+
+const menuHandler = (category: Category) =>
+  category.children.length === 0 ? (
+    <MenuLink key={category.id} isChild={category.isChild}>
+      {category.title}
+    </MenuLink>
+  ) : (
+    <Collapser size={category.children.length} key={category.id} title={category.title}>
+      {category.children.map((child) => menuHandler({ ...child, title: `${child.title}`, isChild: true }))}
+    </Collapser>
+  );
 
 interface Category {
   id: number;
@@ -70,25 +79,10 @@ export default function SideBar(): JSX.Element {
       ],
     },
   ];
-
-  const menuHandler = (category: Category) => {
-    if (category.children.length === 0) {
-      return (
-        <MenuLink key={category.id} isChild={category.isChild}>
-          {category.title}
-        </MenuLink>
-      );
-    }
-    return (
-      <Collapser size={category.children.length} key={category.id} title={category.title}>
-        {category.children.map((child) => menuHandler({ ...child, title: `${child.title}`, isChild: true }))}
-      </Collapser>
-    );
-  };
   return (
     <aside className="py-2">
       <h2 className="ps-4 text-lg font-semibold">Kategoriler</h2>
-      <div className="py-2">{categories.map((category) => menuHandler(category))}</div>
+      <div className="gap-2 py-2">{categories.map((category) => menuHandler(category))}</div>
     </aside>
   );
 }

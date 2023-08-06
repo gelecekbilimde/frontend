@@ -3,14 +3,16 @@ import { forwardRef, type AnchorHTMLAttributes } from 'react';
 import MenuButton from './menu-button';
 
 interface Properties extends AnchorHTMLAttributes<HTMLAnchorElement> {
-  title: string;
   icon?: JSX.Element;
   fontWeight?: 'medium' | 'normal' | 'bold';
+  isChild?: boolean;
 }
 
-const MenuLink = forwardRef<HTMLAnchorElement, Properties>(({ href, title, fontWeight, icon }, reference) => (
+const MenuLink = forwardRef<HTMLAnchorElement, Properties>(({ href, children, icon, isChild }, reference) => (
   <Link href={href ?? '/'} ref={reference}>
-    <MenuButton fontWeight={fontWeight} title={title} icon={icon} />
+    <MenuButton icon={icon} isChild={isChild}>
+      {children}
+    </MenuButton>
   </Link>
 ));
 

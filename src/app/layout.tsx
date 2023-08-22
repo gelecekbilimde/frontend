@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import Header from './header';
 import SideBar from './sidebar';
+import AuthProvider from '@/content/auth-provider';
 
 const poppins = Poppins({
   subsets: ['latin', 'latin-ext'],
@@ -20,11 +21,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html className={poppins.className} lang="tr">
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
-        <Header />
-        <div className="flex flex-row">
-          <SideBar />
-          <main>{children}</main>
-        </div>
+        <AuthProvider>
+          <Header />
+          <div className="flex flex-row">
+            <SideBar />
+            <main>{children}</main>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

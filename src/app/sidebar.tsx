@@ -1,17 +1,6 @@
 import Collapser from '@/components/sidebar/category-collapser';
 import MenuLink from '@/components/sidebar/menu-link';
 
-const menuHandler = (category: Category) =>
-  category.children.length === 0 ? (
-    <MenuLink key={category.id} isChild={category.isChild}>
-      {category.title}
-    </MenuLink>
-  ) : (
-    <Collapser size={category.children.length} key={category.id} title={category.title}>
-      {category.children.map((child) => menuHandler({ ...child, title: `${child.title}`, isChild: true }))}
-    </Collapser>
-  );
-
 interface Category {
   id: number;
   order: number;
@@ -86,3 +75,14 @@ export default function SideBar(): JSX.Element {
     </aside>
   );
 }
+
+const menuHandler: (category: Category) => JSX.Element = (category: Category) =>
+  category.children.length === 0 ? (
+    <MenuLink key={category.id} isChild={category.isChild}>
+      {category.title}
+    </MenuLink>
+  ) : (
+    <Collapser size={category.children.length} key={category.id} title={category.title}>
+      {category.children.map((child) => menuHandler({ ...child, title: `${child.title}`, isChild: true }))}
+    </Collapser>
+  );

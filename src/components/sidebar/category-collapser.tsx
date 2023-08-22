@@ -11,13 +11,15 @@ interface Properties {
   children: JSX.Element | JSX.Element[];
 }
 
-export default function CategoryCollapser({ title, size = 2, children }: Properties) {
+export default function CategoryCollapser({ title, size = 2, children }: Properties): JSX.Element {
   const [state, setState] = useState<boolean>(false);
   const height = 32 * size;
   return (
     <>
       <MenuButton
-        onClick={() => setState((state: boolean) => !state)}
+        onClick={() => {
+          setState((state: boolean) => !state);
+        }}
         icon={<ChevronRightIcon className={`transition-all ${state ? 'rotate-90' : ''}`} height={16} width={16} />}
       >
         {title}

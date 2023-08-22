@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'Gelecek Bilimde, toplum ile bilim arasındaki köprü olmayı amaçlayan popüler bilim değil, bilim iletişimi platformu!',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html className={poppins.className} lang="tr">
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden">

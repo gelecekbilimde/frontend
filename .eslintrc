@@ -35,9 +35,9 @@
   "extends": [
     "eslint:recommended",
     "next/core-web-vitals",
-    // "standard-with-typescript", // TODO: Uncomment this line when the issue is fixed
+    "standard-with-typescript",
     "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended",
+    // "plugin:@typescript-eslint/recommended", //! Conflict with standard-with-typescript
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:unicorn/recommended",
@@ -49,8 +49,11 @@
     "prettier"
   ],
   "rules": {
-    "import/no-unresolved": "error",
+    "import/no-unresolved": "off",
     "n/no-missing-import": "off",
+    "n/no-extraneous-import": ["error", {
+      "allowModules": ["next-auth"]
+  }],
     "no-unused-vars": "warn",
     "no-unused-expressions": [
       "error",
@@ -72,18 +75,19 @@
     "promise/valid-params": "warn",
     "promise/always-return": "off",
     "promise/no-native": "off",
-    "react/prop-types": "warn",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react-refresh/only-export-components": "warn",
-    "testing-library/await-async-query": "error",
-    "testing-library/no-await-sync-query": "error",
+    "react-refresh/only-export-components": "off",
+    "testing-library/await-async-queries": "error",
+    "testing-library/no-await-sync-queries": "error",
     "testing-library/no-debugging-utils": "warn",
     "testing-library/no-dom-import": "off",
     "unicorn/expiring-todo-comments": "off",
     "unicorn/filename-case": "off",
     "unicorn/no-useless-undefined": "warn",
-    "unicorn/prevent-abbreviations": "warn"
+    "unicorn/prevent-abbreviations": "warn",
+    "unicorn/no-negated-condition": "off"
   }
 }

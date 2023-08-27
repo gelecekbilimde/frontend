@@ -9,7 +9,7 @@ import './globals.css';
 const poppins = Poppins({
   subsets: ['latin', 'latin-ext'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--eb-font-sans',
+  variable: '--gb-font-sans',
 });
 
 export const metadata: Metadata = {

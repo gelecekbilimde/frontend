@@ -59,7 +59,7 @@ export default {
       },
     },
     fontFamily: {
-      sans: ['Poppins', 'sans-serif'],
+      sans: ["var(--gb-font-sans)"],
     },
   },
   plugins: [require("tailwindcss-animate")],

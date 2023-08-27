@@ -1,3 +1,5 @@
+[//]: # "Version 0.1"
+
 # Gelecek Bilimde Frontend
 
 Project for the frontend of the Gelecek Bilimde website. It is written in **TypeScript** and **Next.js**. It uses **Tailwind CSS** for styling. It uses **ESLint** and **Prettier** for linting and formatting. It uses **pnpm** for package management.
@@ -50,4 +52,4 @@ pnpm dev
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

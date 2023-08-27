@@ -12,6 +12,7 @@ env.d.ts
 .prettierrc
 .eslintrc
 .stylelintrc
+next-env.d.ts
 
 ## Config files
 tailwind.config.js

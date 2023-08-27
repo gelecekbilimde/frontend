@@ -1,6 +1,8 @@
 ## Modules and libraries 
 node_modules/
 dist/
+.next/
+.husky/
 
 ## Environment
 src/vite-env.d.ts
@@ -12,6 +14,16 @@ env.d.ts
 .stylelintrc
 
 ## Config files
-vite.config.ts
 tailwind.config.js
 postcss.config.js
+next.config.js
+
+## Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+*.md
+*.yml
+*.yaml
+*.log

@@ -1,5 +1,29 @@
+## Modules and libraries 
 node_modules/
 dist/
-.prettierrc.js
-.eslintrc.js
+.next/
+.husky/
+
+## Environment
+src/vite-env.d.ts
 env.d.ts
+
+## Linter / Formatter
+.prettierrc
+.eslintrc
+.stylelintrc
+
+## Config files
+tailwind.config.js
+postcss.config.js
+next.config.js
+
+## Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+*.md
+*.yml
+*.yaml
+*.log

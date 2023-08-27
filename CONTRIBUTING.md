@@ -44,6 +44,21 @@ The subject contains a succinct description of the change:
 - no dot (.) at the end
 - do not include unnecessary details.
 
+### Examples
+
+```
+feat: add signup page
+```
+
+```
+fix: fix signup page
+```
+
+```
+docs: update README.md
+```
+
+
 ## Branch Name Guidelines
 
 `<type>/<subject-name>`
@@ -66,6 +81,20 @@ The subject contains a succinct description of the change:
 - don't capitalize the first letter
 - no dot (.) at the end
 - do not include unnecessary details
+
+### Examples
+
+```
+feature/signup-page
+```
+
+```
+bugfix/header-navigation
+```
+
+```
+test/roblox-authentication
+```
 
 ## Folder Structure
 

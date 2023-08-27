@@ -1,5 +1,5 @@
-import Collapser from '@/components/sidebar/category-collapser';
-import MenuLink from '@/components/sidebar/menu-link';
+import Collapser from '@/app/(layout)/_components/category-collapser';
+import MenuLink from '@/app/(layout)/_components/menu-link';
 
 interface Category {
   id: number;

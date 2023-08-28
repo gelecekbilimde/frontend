@@ -3,6 +3,7 @@ import { Poppins } from 'next/font/google';
 
 import Header from './(layout)/header';
 import SideBar from './(layout)/sidebar';
+import AuthProvider from '@/content/auth-provider';
 
 import './globals.css';
 
@@ -22,11 +23,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html className={poppins.className} lang="tr">
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
-        <Header />
-        <div className="flex flex-row">
-          <SideBar />
-          <main>{children}</main>
-        </div>
+        <AuthProvider>
+          <Header />
+          <div className="flex flex-row">
+            <SideBar />
+            <main>{children}</main>
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

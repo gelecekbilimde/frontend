@@ -1,24 +1,31 @@
 ## Modules and libraries 
 node_modules/
 dist/
+build/
 .next/
 .husky/
+.vscode/
 
 ## Environment
-src/vite-env.d.ts
-env.d.ts
+.env
+.env.development
+.env.test
+.env.production
 next-env.d.ts
 
 ## Linter / Formatter
 .prettierrc
 .eslintrc
 .stylelintrc
+.commitlintrc
 
 ## Config files
 tailwind.config.js
 postcss.config.js
 next.config.js
 commitlint.config.js
+babel.config.js
+jest.config.js
 
 ## Lock files
 package-lock.json

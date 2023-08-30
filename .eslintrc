@@ -21,6 +21,16 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   "plugins": [
     "react",
     "prettier",
@@ -37,13 +47,13 @@
     "next/core-web-vitals",
     "standard-with-typescript",
     "plugin:prettier/recommended",
-    // "plugin:@typescript-eslint/recommended", //! Conflict with standard-with-typescript
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:unicorn/recommended",
     "plugin:security/recommended",
     "plugin:promise/recommended",
-    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:n/recommended",
     "plugin:tailwindcss/recommended",
     "prettier"

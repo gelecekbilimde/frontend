@@ -1,17 +1,15 @@
-import React from 'react';
-import HeroLayout from './heroLayout';
+import HeroLayout from './HeroLayout';
 import HeroComponent from './HeroComponent';
 
-export default function Index() {
+export default function Index(): JSX.Element {
   // href={`/${data.username}/status/${data.postID}`}
   return (
     <HeroLayout>
-      <main className='space-y-5'>
-        <HeroComponent/>
-        <HeroComponent/>
-        <HeroComponent/>
-      </main>
+      <div className="flex flex-col gap-4 px-4">
+        <HeroComponent />
+        <HeroComponent />
+        <HeroComponent />
+      </div>
     </HeroLayout>
   );
 }
-

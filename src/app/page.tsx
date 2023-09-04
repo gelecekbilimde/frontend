@@ -1,10 +1,10 @@
-import Image from 'next/image';
-import MainLayout from '@/components/MainLayout/index';
+import MainLayout from '@/app/(layout)/_components/MainLayout/index';
+import Hero from '@/app/(layout)/_components/Home/Hero/index';
 
 export default function Home(): JSX.Element {
   return (
     <MainLayout>
-      <div>HELLO WORLD</div>
+      <Hero />
     </MainLayout>
   );
 }

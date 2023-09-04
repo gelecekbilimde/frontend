@@ -9,10 +9,8 @@ interface Properties extends AnchorHTMLAttributes<HTMLAnchorElement> {
 }
 
 const MenuLink = forwardRef<HTMLAnchorElement, Properties>(({ href, children, icon, isChild }, reference) => (
-  <Link href={href ?? '/'} ref={reference} passHref>
-    <MenuButton icon={icon} isChild={isChild}>
-      {children}
-    </MenuButton>
+  <Link className={isChild === true ? 'ps-4' : ''} href={href ?? '/'} ref={reference} passHref>
+    <MenuButton icon={icon}>{children}</MenuButton>
   </Link>
 ));
 

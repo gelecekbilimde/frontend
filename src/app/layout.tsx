@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import SideBar from './(layout)/sidebar';
 
 import './globals.css';
 import Providers from '@/app/provider';
@@ -20,10 +19,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html className={poppins.className} lang="tr">
-      <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
-        <Providers>
-          {children}
-        </Providers>
+      <body className="flex min-h-screen flex-col items-center overflow-x-hidden px-4">
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -27,7 +27,7 @@ export default function HeroComponent(): JSX.Element {
             <meta itemProp="wordCount" content="74" />
             <header className="flex items-end justify-between px-6">
               <div className="flex items-center">
-                {item.avatar !== null ? (
+                {item.avatar !== null && item.avatar !== '' ? (
                   <Image src={item.avatar} alt={item.authorname + 'avatar'} width={48} height={48} />
                 ) : (
                   <div
@@ -58,7 +58,7 @@ export default function HeroComponent(): JSX.Element {
             </header>
 
             <figure>
-              {item.image !== null ? (
+              {item.image !== null && item.image !== '' ? (
                 <Image src="/images/hero_ımage.jpg" alt="hero_images" width={704} height={288}></Image>
               ) : (
                 <div className="h-72 w-full"></div>

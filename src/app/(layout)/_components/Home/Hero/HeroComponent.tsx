@@ -9,11 +9,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import HeroData, { type IHero } from './hero.constant';
 
-const data = {
-  username: 'yusufgunes',
-  postID: '123456789',
-};
-
 export default function HeroComponent(): JSX.Element {
   const router = useRouter();
 
@@ -25,7 +20,7 @@ export default function HeroComponent(): JSX.Element {
             itemScope
             itemType="https://schema.org/BlogPosting"
             onClick={() => {
-              router.push(`/${data.username}/status/${data.postID}`);
+              router.push(`/${item.authorname}/status/${item.postID}`);
             }}
             className="w-[44rem] space-y-5 rounded-xl border border-gray/40 bg-white py-5 dark:bg-black"
           >
@@ -37,11 +32,11 @@ export default function HeroComponent(): JSX.Element {
                   <p itemProp="author" itemScope itemType="https://schema.org/Person" className="font-semibold">
                     <span itemProp="name">
                       <Link itemProp="url" href="/">
-                        Yusuf Güneş
+                        {item.authorname}
                       </Link>
                     </span>
                   </p>
-                  <h1 className="-mt-1 text-sm font-medium opacity-60">Uzay Bilimi</h1>
+                  <h1 className="-mt-1 text-sm font-medium opacity-60">{item.category}</h1>
                 </div>
               </div>
               <time
@@ -59,18 +54,10 @@ export default function HeroComponent(): JSX.Element {
 
             <div className="px-6">
               <h1 itemProp="name" className="mb-2 break-words text-2xl font-bold">
-                Lorem Ipsum Nedir?
+                {item.title}
               </h1>
               <section itemProp="articleBody">
-                <p>
-                  Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir. Lorem Ipsum, adı bilinmeyen
-                  bir matbaacının bir hurufat numune kitabı oluşturmak üzere bir yazı galerisini alarak karıştırdığı
-                  15&apos;lerden beri endüstri standardı sahte metinler olarak kullanılmıştır. Beşyüz yıl boyunca
-                  varlığını sürdürmekle kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de sıçramıştır.
-                  1960&apos;larda Lorem Ipsum pasajları da içeren Letraset yapraklarının yayınlanması ile ve yakın
-                  zamanda Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler
-                  olmuştur...
-                </p>
+                <p>{item.content}</p>
               </section>
             </div>
 

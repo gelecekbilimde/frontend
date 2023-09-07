@@ -2,7 +2,7 @@ export interface IHero {
   title: string | null;
   content: string | null;
   image: string | null;
-  avatar: string;
+  avatar: string | null;
   authorname: string | null;
   author: string | null;
   date: string | null;

@@ -27,7 +27,16 @@ export default function HeroComponent(): JSX.Element {
             <meta itemProp="wordCount" content="74" />
             <header className="flex items-end justify-between px-6">
               <div className="flex items-center">
-                <div className="me-3 h-12 w-12 rounded-full bg-gray"></div>
+                {item.avatar !== null ? (
+                  <Image src={item.avatar} alt={item.authorname + 'avatar'} width={48} height={48} />
+                ) : (
+                  <div
+                    itemProp="avatar"
+                    itemScope
+                    itemType="https://schema.org/Person"
+                    className="me-3 h-12 w-12 rounded-full bg-gray"
+                  ></div>
+                )}
                 <div className="mt-1 text-start">
                   <p itemProp="author" itemScope itemType="https://schema.org/Person" className="font-semibold">
                     <span itemProp="name">
@@ -49,7 +58,11 @@ export default function HeroComponent(): JSX.Element {
             </header>
 
             <figure>
-              <Image src="/images/hero_ımage.jpg" alt="hero_images" width={704} height={300}></Image>
+              {item.image !== null ? (
+                <Image src="/images/hero_ımage.jpg" alt="hero_images" width={704} height={288}></Image>
+              ) : (
+                <div className="h-72 w-full"></div>
+              )}
             </figure>
 
             <div className="px-6">

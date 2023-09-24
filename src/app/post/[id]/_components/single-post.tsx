@@ -1,6 +1,7 @@
 'use client';
 
 import { useQuery } from '@tanstack/react-query';
+
 import { getPosts } from '../_services/get-post';
 
 export default function SinglePost({ id }: { id: number }): JSX.Element {

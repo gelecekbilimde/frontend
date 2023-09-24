@@ -1,9 +1,10 @@
 // eslint-disable-next-line import/named
 import { dehydrate, Hydrate } from '@tanstack/react-query';
+
 import getQueryClient from '@/lib/getQueryClient';
 
-import { getPosts } from './_services/get-post';
 import SinglePost from './_components/single-post';
+import { getPosts } from './_services/get-post';
 
 interface Properties {
   params: {

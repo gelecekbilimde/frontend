@@ -35,7 +35,7 @@ export default function Header(): JSX.Element {
   ];
 
   return (
-    <header className="flex w-full items-center justify-between h-20">
+    <header className="flex h-20 w-full items-center justify-between">
       <h1 className=" text-2xl font-bold">Gelecek Bilimde</h1>
       <nav>
         <NavigationMenu>

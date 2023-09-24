@@ -23,7 +23,10 @@
   },
   "settings": {
     "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+      "@typescript-eslint/parser": [
+        ".ts",
+        ".tsx"
+      ]
     },
     "import/resolver": {
       "typescript": {
@@ -40,7 +43,8 @@
     "import",
     "unicorn",
     "testing-library",
-    "react-refresh"
+    "react-refresh",
+    "simple-import-sort"
   ],
   "extends": [
     "eslint:recommended",
@@ -59,11 +63,23 @@
     "prettier"
   ],
   "rules": {
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/no-unused-vars": "off",
     "import/no-unresolved": "off",
+    "jsx-a11y/anchor-is-valid": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/no-noninteractive-element-interactions": "warn",
     "n/no-missing-import": "off",
-    "n/no-extraneous-import": ["error", {
-      "allowModules": ["next-auth"]
-  }],
+    "n/no-extraneous-import": [
+      "error",
+      {
+        "allowModules": [
+          "next-auth"
+        ]
+      }
+    ],
     "no-unused-vars": "warn",
     "no-unused-expressions": [
       "error",
@@ -71,7 +87,6 @@
         "allowTernary": true
       }
     ],
-    "jsx-a11y/anchor-is-valid": "warn",
     "prettier/prettier": "warn",
     "promise/catch-or-return": "error",
     "promise/no-new-statics": "error",
@@ -90,6 +105,8 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react-refresh/only-export-components": "off",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
     "testing-library/await-async-queries": "error",
     "testing-library/no-await-sync-queries": "error",
     "testing-library/no-debugging-utils": "warn",

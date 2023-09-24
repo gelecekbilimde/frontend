@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
+import { useState } from 'react';
+
 import Icon from '@/lib/get-luicide-icon';
 
 import type { Category } from './category';

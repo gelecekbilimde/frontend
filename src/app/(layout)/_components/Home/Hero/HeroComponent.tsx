@@ -1,12 +1,12 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 'use client';
-import React from 'react';
 import { Heart, MessageCircle } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import React from 'react';
+
+import { Badge } from '@/components/ui/badge';
+
 import HeroData, { type IHero } from './hero.constant';
 
 export default function HeroComponent(): JSX.Element {

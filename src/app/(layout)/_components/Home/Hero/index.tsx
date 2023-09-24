@@ -1,5 +1,5 @@
-import HeroLayout from './HeroLayout';
 import HeroComponent from './HeroComponent';
+import HeroLayout from './HeroLayout';
 
 export default function Index(): JSX.Element {
   // href={`/${data.username}/status/${data.postID}`}

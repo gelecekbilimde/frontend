@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Header from '@/app/(layout)/header';
 import LeftSideBar from '@/app/(layout)/left-sidebar';
 
-export default function Index({ children }: { children: React.ReactNode }): JSX.ELement {
+export default function Index({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <div className="flex w-full max-w-screen-2xl flex-col items-center justify-between">
       <Header />

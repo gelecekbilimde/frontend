@@ -1,6 +1,7 @@
 'use client';
 
 import { signIn } from 'next-auth/react';
+
 import { useToast } from '@/components/ui/use-toast';
 
 import LoginForm, { type FormInputs } from './_components/login-form';

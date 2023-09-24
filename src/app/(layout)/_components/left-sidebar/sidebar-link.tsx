@@ -1,7 +1,9 @@
-import type { ReactNode } from 'react';
-import Icon from '@/lib/get-luicide-icon';
 import type dynamicIconImports from 'lucide-react/dynamicIconImports';
 import Link from 'next/link';
+import type { ReactNode } from 'react';
+
+import Icon from '@/lib/get-luicide-icon';
+
 import SidebarButton from './sidebar-button';
 
 interface Properties {

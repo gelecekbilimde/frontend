@@ -196,4 +196,4 @@ function useToast(): State & { toast: typeof toast; dismiss: (toastId?: string) 
   };
 }
 
-export { useToast, toast };
+export { toast, useToast };

@@ -1,9 +1,7 @@
 'use client';
 
-import { useState } from 'react';
-
-// eslint-disable-next-line import/named
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState } from 'react';
 
 interface Properties {
   children: React.ReactNode;

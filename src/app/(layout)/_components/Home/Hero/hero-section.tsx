@@ -3,10 +3,14 @@ import React from 'react';
 
 import { type IHero } from './hero.constant';
 
-export default function HeroSection({ item }: { item: IHero }): JSX.Element {
+interface Properties {
+  item: IHero;
+}
+
+export default function HeroSection({ item }: Properties): JSX.Element {
   return (
     <>
-      {item.image !== '' && item.image !== undefined && item.image ? (
+      {item.image !== undefined && item.image !== '' ? (
         <figure>
           <Image src={`${item.image}`} alt="hero_images" width={704} height={300}></Image>
         </figure>

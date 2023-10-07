@@ -10,8 +10,8 @@ import HeroSection from './hero-section';
 export default function HeroComponent(): JSX.Element {
   const router = useRouter();
 
-  const onPushPage = (e: MouseEvent, item: IHero) => {
-    e.stopPropagation();
+  const onPushPage: DivEventProperties = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, item: IHero) => {
+    event.stopPropagation();
     router.push(`/${item.authorname}/status/${item.postID}`);
   };
 
@@ -27,8 +27,8 @@ export default function HeroComponent(): JSX.Element {
           <meta itemProp="wordCount" content="74" />
           <HeroHeader item={item} onPushPage={onPushPage} />
           <div
-            onClick={(e) => {
-              onPushPage(e, item);
+            onClick={(event) => {
+              onPushPage(event, item);
             }}
           >
             <HeroSection item={item} />
@@ -39,3 +39,5 @@ export default function HeroComponent(): JSX.Element {
     </main>
   );
 }
+
+type DivEventProperties = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, item: IHero) => void;

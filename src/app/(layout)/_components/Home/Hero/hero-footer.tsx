@@ -4,13 +4,13 @@ import React from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
-const onHeart = (e: MouseEvent) => {
-  e.stopPropagation();
+const onHeart: ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  event.stopPropagation();
   console.log('heart');
 };
 
-const onMessageCircle = (e: MouseEvent) => {
-  e.stopPropagation();
+const onMessageCircle: ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  event.stopPropagation();
   console.log('message');
 };
 
@@ -23,8 +23,8 @@ export default function HeroFooter(): JSX.Element {
     >
       <section className="flex items-center space-x-1">
         <Button
-          onClick={(e) => {
-            onHeart(e);
+          onClick={(event) => {
+            onHeart(event);
           }}
           size={'default'}
           className="flex h-fit w-fit items-center space-x-2 bg-transparent text-black"
@@ -40,12 +40,12 @@ export default function HeroFooter(): JSX.Element {
           </h1>
         </Button>
         <Button
-          onClick={(e) => {
-            onMessageCircle(e);
+          onClick={(event) => {
+            onMessageCircle(event);
           }}
           variant={'ghost'}
-          className="items-c enter
-                    flex space-x-2 bg-transparent text-black"
+          className="flex
+                    items-center space-x-2 bg-transparent text-black"
           itemProp="interactionStatistic"
           itemScope
           itemType="http://schema.org/InteractionCounter"
@@ -64,3 +64,5 @@ export default function HeroFooter(): JSX.Element {
     </footer>
   );
 }
+
+type ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

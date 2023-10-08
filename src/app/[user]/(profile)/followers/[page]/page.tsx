@@ -16,6 +16,8 @@ export default function Followers({ params }: Properties): JSX.Element {
   const currentPage = Number(params.page) ?? 1;
   const perPage = 12;
 
+  const isPreviousDisabled = currentPage < 2;
+  const isNextDisabled = mock_data.length < perPage * (currentPage + 1);
   return (
     <div>
       <h1 className="py-2 ps-4 text-2xl font-bold">Followers</h1>
@@ -23,6 +25,20 @@ export default function Followers({ params }: Properties): JSX.Element {
         {mock_data.slice(perPage * (currentPage - 1), perPage * (currentPage - 1) + perPage).map((item) => (
           <FollowerCard key={item.id} follower={item} />
         ))}
+      </div>
+      <div className="flex w-full justify-center gap-4 py-2">
+        <Link
+          className={isPreviousDisabled ? 'pointer-events-none' : ''}
+          href={isPreviousDisabled ? '#' : `/${params.user}/followers/${currentPage - 1}`}
+        >
+          <Button disabled={currentPage < 2}>Previous</Button>
+        </Link>
+        <Link
+          className={isNextDisabled ? 'pointer-events-none' : ''}
+          href={isNextDisabled ? '#' : `/${params.user}/followers/${currentPage + 1}`}
+        >
+          <Button disabled={isNextDisabled}>Next</Button>
+        </Link>
       </div>
     </div>
   );

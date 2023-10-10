@@ -18,28 +18,27 @@ export default function Followers({ params }: Properties): JSX.Element {
 
   const isPreviousDisabled = currentPage < 2;
   const isNextDisabled = mock_data.length < perPage * (currentPage + 1);
+
   return (
     <div>
-      <h1 className="py-2 ps-4 text-2xl font-bold">Followers</h1>
-      <div className="flex flex-row flex-wrap">
+      <h1 className="p-2 pb-4 text-2xl font-bold">Takipçiler</h1>
+      <div className="grid grid-cols-2 gap-4">
         {mock_data.slice(perPage * (currentPage - 1), perPage * (currentPage - 1) + perPage).map((item) => (
-          <div key={item.id} className="w-6/12 p-2">
-            <FollowerCard follower={item} />
-          </div>
+          <FollowerCard key={item.id} follower={item} />
         ))}
       </div>
-      <div className="flex w-full justify-center gap-4 py-2">
+      <div className="flex w-full justify-center gap-4 pt-4">
         <Link
           className={isPreviousDisabled ? 'pointer-events-none' : ''}
           href={isPreviousDisabled ? '#' : `/${params.user}/followers/${currentPage - 1}`}
         >
-          <Button disabled={currentPage < 2}>Previous</Button>
+          <Button disabled={currentPage < 2}>Önceki Sayfa</Button>
         </Link>
         <Link
           className={isNextDisabled ? 'pointer-events-none' : ''}
           href={isNextDisabled ? '#' : `/${params.user}/followers/${currentPage + 1}`}
         >
-          <Button disabled={isNextDisabled}>Next</Button>
+          <Button disabled={isNextDisabled}>Sonraki Sayfa</Button>
         </Link>
       </div>
     </div>

@@ -1,18 +1,13 @@
-'use client';
-
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
 import { type User } from '../types/user';
+import HeaderLinks from './header-links';
 
 export default function ProfileHeader({ user }: { user: User }): JSX.Element {
-  const pathname = usePathname();
   return (
-    <div
-      className="flex h-[24rem] w-full flex-col items-end rounded-2xl border border-zinc-200 shadow md:h-80"
-      style={{ backgroundImage: "url('https://picsum.photos/1920/320')" }}
-    >
-      <div className="flex h-[20rem] w-full items-end justify-center md:justify-start">
+    <div className="flex h-[24rem] w-full flex-col items-end rounded-2xl border border-zinc-200 shadow md:h-80">
+      <div
+        className="flex h-[20rem] w-full items-end justify-center rounded-t-2xl border border-zinc-200 md:justify-start"
+        style={{ backgroundImage: "url('https://picsum.photos/1920/320')" }}
+      >
         <img
           className="relative -bottom-9 left-0 rounded-full border-2 border-white md:left-20"
           src="https://picsum.photos/128"
@@ -27,30 +22,7 @@ export default function ProfileHeader({ user }: { user: User }): JSX.Element {
           <p className="text-zinc-500">@{user.username}</p>
         </div>
         <div className="flex w-auto flex-row items-center justify-evenly justify-self-end pt-4 md:justify-center md:gap-8 md:pt-0">
-          <Link
-            className={pathname === `/${user.username}/profile` ? 'border-b-2' : ''}
-            href={`/${user.username}/profile`}
-          >
-            Profil
-          </Link>
-          <Link
-            className={pathname.startsWith(`/${user.username}/followers`) ? 'border-b-2' : ''}
-            href={`/${user.username}/followers`}
-          >
-            Takipçiler
-          </Link>
-          <Link
-            className={pathname === `/${user.username}/friends` ? 'border-b-2' : ''}
-            href={`/${user.username}/friends`}
-          >
-            Arkadaşlar
-          </Link>
-          <Link
-            className={pathname === `/${user.username}/gallery` ? 'border-b-2' : ''}
-            href={`/${user.username}/gallery`}
-          >
-            Galeri
-          </Link>
+          <HeaderLinks username={user.username} />
         </div>
       </div>
     </div>

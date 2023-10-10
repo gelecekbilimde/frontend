@@ -18,11 +18,13 @@ const posts = [
 export default function UserPage({ params }: Properties) {
   return (
     <>
-      <h1 className="py-2 ps-4 text-2xl font-bold">Followers</h1>
-      <Card>
-        <h2 className="py-2 ps-4 text-xl font-bold">{posts[0].title}</h2>
-        <p>{posts[0].content}</p>
-      </Card>
+      <h1 className="py-2 ps-4 text-2xl font-bold">Yazılar</h1>
+      {posts.map((post) => (
+        <Card key={post.title} col>
+          <h2 className="py-2 ps-4 text-xl font-bold">{post.title}</h2>
+          <p>{post.content}</p>
+        </Card>
+      ))}
     </>
   );
 }

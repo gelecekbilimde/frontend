@@ -5,12 +5,17 @@ import React from 'react';
 import { DropAction } from './dropdowns';
 import { type IHero } from './hero.constant';
 
-export default function HeroHeader({ item }: { item: IHero }): JSX.Element {
+interface Properties {
+  item: IHero;
+  onPushPage: (event: React.MouseEvent<HTMLDivElement, MouseEvent>, item: IHero) => void;
+}
+
+export default function HeroHeader({ onPushPage, item }: Properties): JSX.Element {
   return (
     <header className="flex items-end justify-between px-6">
       <section className="flex items-center">
-        <div className="z-1000">
-          {item.avatar !== '' && item.avatar !== undefined && item.avatar ? (
+        <div className="z-[-1000]">
+          {item.avatar !== '' && item.avatar !== undefined && item.avatar.length > 0 ? (
             <Image src={item.avatar} width={48} height={48} alt={`${item.authorname}Avatar`}></Image>
           ) : (
             <div className="me-3 h-12 w-12 rounded-full bg-gray"></div>

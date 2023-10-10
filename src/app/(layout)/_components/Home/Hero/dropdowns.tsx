@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
-export function DropAction() {
+export function DropAction(): JSX.Element {
   const [position, setPosition] = React.useState('bottom');
 
   return (

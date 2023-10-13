@@ -1,10 +1,10 @@
-import Buttons from './buttons';
 import Card from './card';
+import ProfileButtons from './profile-buttons';
 
 export default function Sidebar(): JSX.Element {
   return (
     <>
-      <Buttons />
+      <ProfileButtons />
       <Card className="items-center justify-around py-8">
         <div>
           <p className="text-center text-2xl font-bold">2432</p>

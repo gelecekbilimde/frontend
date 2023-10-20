@@ -9,14 +9,14 @@ export default function ProfileHeader({ user }: { user: User }): JSX.Element {
         style={{ backgroundImage: "url('https://picsum.photos/1920/320')" }}
       >
         <img
-          className="relative -bottom-9 left-0 rounded-full border-2 border-white md:left-20"
+          className="relative -bottom-9 left-0 rounded-full border-2 border-white md:left-10"
           src="https://picsum.photos/128"
           width={128}
           height={128}
           alt="Profil resmi"
         />
       </div>
-      <div className="flex h-40 w-full flex-col justify-center rounded-b-2xl bg-white pt-6 md:h-16 md:flex-row md:items-center md:justify-between md:pe-16 md:ps-[13rem] md:pt-0">
+      <div className="flex h-40 w-full flex-col justify-center rounded-b-2xl bg-white pt-6 md:h-16 md:flex-row md:items-center md:justify-between md:pe-16 md:ps-40 md:pt-0">
         <div className="flex flex-col items-center md:flex-row md:gap-4">
           <p className="text-xl font-bold">{user.name}</p>
           <p className="text-zinc-500">@{user.username}</p>

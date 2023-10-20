@@ -12,7 +12,7 @@ import {
 import GetLuicideIcon from '@/lib/get-luicide-icon';
 
 import Card from '../../_components/card';
-import type { User } from '../../_type/user';
+import type { User } from '../../_types/user';
 
 interface Properties {
   friend: User;

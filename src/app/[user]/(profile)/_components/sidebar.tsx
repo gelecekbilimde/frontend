@@ -1,7 +1,7 @@
 import Card from './card';
 import ProfileButtons from './profile-buttons';
 
-export default function Sidebar(): JSX.Element {
+export default function ProfileSidebar(): JSX.Element {
   return (
     <>
       <ProfileButtons />

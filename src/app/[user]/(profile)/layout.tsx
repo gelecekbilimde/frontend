@@ -2,9 +2,9 @@ import { Suspense } from 'react';
 
 import Header from '@/app/(layout)/header';
 
-import ProfileHeader from './_components/profile-header';
-import Sidebar from './_components/sidebar';
+import ProfileSidebar from './_components/sidebar';
 import Loading from './loading';
+import ProfileHeader from './profile-header';
 
 interface Properties {
   params: {
@@ -30,7 +30,7 @@ export default function Layout({ children }: Properties) {
             <ProfileHeader user={user} />
             <div className="grid w-full grid-cols-3 gap-4">
               <div className="col-span-3 flex flex-col gap-4 md:col-span-1">
-                <Sidebar />
+                <ProfileSidebar />
               </div>
               <div className="col-span-3 flex flex-col gap-4 md:col-span-2">
                 <Suspense fallback={<Loading />}>{children}</Suspense>

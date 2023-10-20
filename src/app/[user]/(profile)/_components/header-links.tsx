@@ -1,6 +1,6 @@
 'use client';
 
-import { ImageIcon, Rss, User, Users2 } from 'lucide-react';
+import { ListIcon, RssIcon, UserIcon, Users2Icon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -33,20 +33,20 @@ export default function HeaderLinks({ username }: { username: string }): JSX.Ele
   return (
     <>
       <HeaderLink path="profile" username={username}>
-        <User color="black" size={iconSize} />
+        <UserIcon color="black" size={iconSize} />
         Profil
       </HeaderLink>
       <HeaderLink path="followers" username={username}>
-        <Rss color="black" size={iconSize} />
+        <RssIcon color="black" size={iconSize} />
         Takipçiler
       </HeaderLink>
       <HeaderLink path="friends" username={username}>
-        <Users2 color="black" size={iconSize} />
+        <Users2Icon color="black" size={iconSize} />
         Arkadaşlar
       </HeaderLink>
       <HeaderLink path="gallery" username={username}>
-        <ImageIcon color="black" size={iconSize} />
-        Galeri
+        <ListIcon color="black" size={iconSize} />
+        Listeler
       </HeaderLink>
     </>
   );

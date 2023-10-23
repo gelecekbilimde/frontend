@@ -37,6 +37,7 @@ export default {
         darker: '#1F2024',
         cream: '#ECECEC',
         gray: '#9B9B9B',
+        ring: "hsl(var(215 20.2% 65.1%))",
       },
       spacing: {
         xl: '1200px',

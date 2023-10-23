@@ -1,7 +1,8 @@
+import { type User } from '../_types/user';
 import Card from './card';
 import ProfileButtons from './profile-buttons';
 
-export default function ProfileSidebar(): JSX.Element {
+export default function ProfileSidebar({ user }: { user: User }): JSX.Element {
   return (
     <>
       <ProfileButtons />
@@ -21,6 +22,13 @@ export default function ProfileSidebar(): JSX.Element {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu nulla, facilisis at vestibulum non,
           venenatis eu libero. Nulla elementum.
         </p>
+        <div className="grid grid-cols-2">
+          {/* TODO: Use icons here */}
+          <p className="font-semibold">University:</p>
+          <p>{user.university}</p>
+          <p className="font-semibold">Title:</p>
+          <p>{user.title}</p>
+        </div>
       </Card>
     </>
   );

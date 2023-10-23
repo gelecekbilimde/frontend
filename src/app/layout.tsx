@@ -22,8 +22,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }):
   return (
     <html className={poppins.className} lang="tr">
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden px-4">
-        <Providers>{children}</Providers>
-        <Toaster />
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

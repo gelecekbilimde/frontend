@@ -1,5 +1,5 @@
 import HeaderLinks from './_components/header-links';
-import { type User } from './types/user';
+import { type User } from './_types/user';
 
 export default function ProfileHeader({ user }: { user: User }): JSX.Element {
   return (

@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import Header from '@/app/(layout)/header';
 
+import mockData from './_assets/MOCK_DATA.json';
 import ProfileSidebar from './_components/sidebar';
 import Loading from './loading';
 import ProfileHeader from './profile-header';
@@ -13,13 +14,9 @@ interface Properties {
   children: React.ReactNode;
 }
 
-const user = {
-  name: 'John Doe',
-  username: 'johndoe',
-  image: 'https://picsum.photos/128',
-};
+const user = mockData[0];
 
-export default function Layout({ children }: Properties) {
+export default function Layout({ children }: Properties): JSX.Element {
   // TODO: Fetch user data from API
   return (
     <div className="flex w-full max-w-screen-2xl flex-col items-center justify-between">
@@ -30,7 +27,7 @@ export default function Layout({ children }: Properties) {
             <ProfileHeader user={user} />
             <div className="grid w-full grid-cols-3 gap-4">
               <div className="col-span-3 flex flex-col gap-4 md:col-span-1">
-                <ProfileSidebar />
+                <ProfileSidebar user={user} />
               </div>
               <div className="col-span-3 flex flex-col gap-4 md:col-span-2">
                 <Suspense fallback={<Loading />}>{children}</Suspense>

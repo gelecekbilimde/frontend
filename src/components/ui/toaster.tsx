@@ -1,7 +1,14 @@
-'use client';
+"use client";
 
-import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from '@/components/ui/toast';
-import { useToast } from '@/components/ui/use-toast';
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from "@/components/ui/toast";
+import { useToast } from "@/components/ui/use-toast";
 
 export function Toaster(): JSX.Element {
   const { toasts } = useToast();
@@ -13,7 +20,9 @@ export function Toaster(): JSX.Element {
           <Toast key={id} {...properties}>
             <div className="grid gap-1">
               {title !== undefined && <ToastTitle>{title}</ToastTitle>}
-              {description !== undefined && <ToastDescription>{description}</ToastDescription>}
+              {description !== undefined && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
             </div>
             {action}
             <ToastClose />

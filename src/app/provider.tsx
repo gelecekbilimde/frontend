@@ -1,5 +1,5 @@
-import AuthProvider from '@/providers/auth-provider';
-import ReactQueryProvider from '@/providers/react-query-provider';
+import AuthProvider from "@/providers/auth-provider";
+import ReactQueryProvider from "@/providers/react-query-provider";
 
 interface Properties {
   children: React.ReactNode;

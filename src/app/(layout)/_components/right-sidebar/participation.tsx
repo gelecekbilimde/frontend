@@ -1,6 +1,13 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from "next/image";
 
-import { Separator } from '@/components/ui/separator';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 const Participation = () => {
   return (
@@ -14,11 +21,18 @@ const Participation = () => {
       <CardContent>
         <Separator className="mb-4" />
 
-        <div className="flex flex-col space-y-4"></div>
+        <div className="flex flex-col space-y-4">
+          <Image
+            src="/images/application_banner.png"
+            alt="application banner"
+            width={100}
+            height={100}
+            layout="responsive"
+          />
+        </div>
       </CardContent>
     </Card>
   );
 };
 
 export default Participation;
-

@@ -1,5 +1,5 @@
-import Participation from './participation';
-import RecentVideos from './recent-videos';
+import Participation from "./participation";
+import RecentVideos from "./recent-videos";
 
 export default function RightSidebar(): JSX.Element {
   return (
@@ -9,4 +9,3 @@ export default function RightSidebar(): JSX.Element {
     </div>
   );
 }
-

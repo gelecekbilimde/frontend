@@ -30,7 +30,7 @@ const options: NextAuthOptions = {
     })
   ],
 
-  secret: process.env.SECRET,
+  secret: process.env.NEXTAUTH_SECRET,
 
   pages: {
     signIn: "/signin",

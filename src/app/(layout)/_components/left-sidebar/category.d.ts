@@ -1,4 +1,4 @@
-import type dynamicIconImports from 'lucide-react/dynamicIconImports';
+import type dynamicIconImports from "lucide-react/dynamicIconImports";
 
 export interface Category {
   id: number;

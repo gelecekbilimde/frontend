@@ -1,17 +1,21 @@
-import { Heart, MessageCircle } from 'lucide-react';
-import React from 'react';
+import { Heart, MessageCircle } from "lucide-react";
+import React from "react";
 
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-const onHeart: ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+const onHeart: ButtonEventProperties = (
+  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+) => {
   event.stopPropagation();
-  console.log('heart');
+  console.log("heart");
 };
 
-const onMessageCircle: ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+const onMessageCircle: ButtonEventProperties = (
+  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+) => {
   event.stopPropagation();
-  console.log('message');
+  console.log("message");
 };
 
 export default function HeroFooter(): JSX.Element {
@@ -19,23 +23,23 @@ export default function HeroFooter(): JSX.Element {
     <footer
       className="flex items-center justify-between space-x-6 px-6"
       itemScope
-      itemType="http://schema.org/SocialMediaPosting"
-    >
+      itemType="http://schema.org/SocialMediaPosting">
       <section className="flex items-center space-x-1">
         <Button
           onClick={(event) => {
             onHeart(event);
           }}
-          size={'default'}
+          size={"default"}
           className="flex h-fit w-fit items-center space-x-2 bg-transparent text-black"
           itemProp="interactionStatistic"
           itemScope
-          itemType="http://schema.org/InteractionCounter"
-        >
+          itemType="http://schema.org/InteractionCounter">
           <span itemProp="interactionType">
             <Heart />
           </span>
-          <h1 className="text-sm font-semibold opacity-60" itemProp="userInteractionCount">
+          <h1
+            className="text-sm font-semibold opacity-60"
+            itemProp="userInteractionCount">
             100
           </h1>
         </Button>
@@ -43,17 +47,18 @@ export default function HeroFooter(): JSX.Element {
           onClick={(event) => {
             onMessageCircle(event);
           }}
-          variant={'ghost'}
+          variant={"ghost"}
           className="flex
                     items-center space-x-2 bg-transparent text-black"
           itemProp="interactionStatistic"
           itemScope
-          itemType="http://schema.org/InteractionCounter"
-        >
+          itemType="http://schema.org/InteractionCounter">
           <span itemProp="interactionType">
             <MessageCircle />
           </span>
-          <h1 className="text-sm font-semibold opacity-60" itemProp="userInteractionCount">
+          <h1
+            className="text-sm font-semibold opacity-60"
+            itemProp="userInteractionCount">
             100
           </h1>
         </Button>
@@ -65,4 +70,6 @@ export default function HeroFooter(): JSX.Element {
   );
 }
 
-type ButtonEventProperties = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+type ButtonEventProperties = (
+  event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+) => void;

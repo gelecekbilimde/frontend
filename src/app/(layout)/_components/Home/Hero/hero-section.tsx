@@ -1,7 +1,6 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
 
-import { type IHero } from './hero.constant';
+import { type IHero } from "./hero.constant";
 
 interface Properties {
   item: IHero;
@@ -10,9 +9,13 @@ interface Properties {
 export default function HeroSection({ item }: Properties): JSX.Element {
   return (
     <>
-      {item.image !== undefined && item.image !== '' ? (
+      {item.image !== undefined && item.image !== "" ? (
         <figure>
-          <Image src={`${item.image}`} alt="hero_images" width={704} height={300}></Image>
+          <Image
+            src={`${item.image}`}
+            alt="hero_images"
+            width={704}
+            height={300}></Image>
         </figure>
       ) : (
         <div>Resim eksik</div>
@@ -22,6 +25,7 @@ export default function HeroSection({ item }: Properties): JSX.Element {
         <h1 itemProp="name" className="mb-2 break-words text-2xl font-bold">
           {item.title}
         </h1>
+
         <p itemProp="articleBody">{item.description}</p>
       </section>
     </>

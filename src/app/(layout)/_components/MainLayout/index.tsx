@@ -1,5 +1,6 @@
 import React from 'react';
 
+import RightSidebar from '@/app/(layout)/_components/right-sidebar';
 import Header from '@/app/(layout)/header';
 import LeftSideBar from '@/app/(layout)/left-sidebar';
 
@@ -11,9 +12,12 @@ export default function Index({ children }: { children: React.ReactNode }): JSX.
         <div className="w-2/12">
           <LeftSideBar />
         </div>
-        <main className="w-7/12">{children}</main>
-        <div className="w-2/12">Right Sidebar</div>
+        <main className="w-7/8">{children}</main>
+        <div className="w-3/12">
+          <RightSidebar />
+        </div>
       </div>
     </div>
   );
 }
+

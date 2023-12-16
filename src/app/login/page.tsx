@@ -1,25 +1,32 @@
-'use client';
+"use client";
 
-import { signIn } from 'next-auth/react';
-import { useToast } from '@/components/ui/use-toast';
+import { signIn } from "next-auth/react";
 
-import LoginForm, { type FormInputs } from './_components/login-form';
+import { useToast } from "@/components/ui/use-toast";
+
+import LoginForm, { type FormInputs } from "./_components/login-form";
 
 export default function SignIn(): JSX.Element {
   const { toast } = useToast();
 
   const onSubmit: (formData: FormInputs) => void = (formData: FormInputs) => {
     Promise.resolve(
-      signIn('credentials', {
+      signIn("credentials", {
         username: formData.username,
         password: formData.password,
-        callbackUrl: '/',
+        callbackUrl: "/",
         redirect: true,
       }),
     )
-      .then(() => toast({ title: 'Success', description: 'Başarıyla giriş yaptınız.' }))
+      .then(() =>
+        toast({ title: "Success", description: "Başarıyla giriş yaptınız." }),
+      )
       .catch((error) => {
-        toast({ title: 'Error', description: error.message, variant: 'destructive' });
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
       });
   };
 

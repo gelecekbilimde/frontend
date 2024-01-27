@@ -3,7 +3,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
-import Providers from "@/app/provider";
+import Providers from '@/app/provider';
+import { Toaster } from '@/components/ui/toaster';
 
 const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
@@ -25,7 +26,10 @@ export default function RootLayout({
   return (
     <html className={poppins.className} lang="tr">
       <body className="flex min-h-screen flex-col items-center overflow-x-hidden px-4">
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Toaster />
+        </Providers>
       </body>
     </html>
   );

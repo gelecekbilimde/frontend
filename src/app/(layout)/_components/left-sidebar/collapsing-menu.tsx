@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, DotIcon } from "lucide-react";
 import { useState } from "react";
 
 import Icon from "@/lib/get-luicide-icon";
@@ -22,9 +22,7 @@ export default function CollapsingMenu({
         onClick={() => {
           active === category.id ? setActive(0) : setActive(category.id);
         }}
-        leftIcon={
-          <Icon name={category.icon ?? "dot"} color="black" size={16} />
-        }
+        leftIcon={category.icon ?? <DotIcon color="black" size={16} />}
         rightIcon={
           <ChevronRight
             className={`h-5 w-5 transition-all ${

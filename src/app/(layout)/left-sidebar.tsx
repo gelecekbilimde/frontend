@@ -8,7 +8,7 @@ import Volunteer from "./_components/left-sidebar/volunteer";
 export default function LeftSideBar(): JSX.Element {
   return (
     <aside className="py-2">
-      <h2 className="ps-4 text-lg font-bold">Kategoriler</h2>
+      <h2 className="ps-4 text-lg font-bold">#Kategoriler</h2>
       <div className="flex flex-col py-2">
         {categories.map((category) => (
           <Fragment key={category.id}>

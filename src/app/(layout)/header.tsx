@@ -12,6 +12,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import ProfileDropdown from "./_components/Header/profile-dropdown";
 import { cn } from "@/lib/utils";
 
 const links = [

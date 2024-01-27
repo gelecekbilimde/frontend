@@ -15,7 +15,8 @@ export default function HeroSection({ item }: Properties): JSX.Element {
             src={`${item.image}`}
             alt="hero_images"
             width={704}
-            height={300}></Image>
+            height={300}
+          ></Image>
         </figure>
       ) : (
         <div>Resim eksik</div>

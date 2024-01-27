@@ -22,14 +22,15 @@ export default function CollapsingMenu({
         onClick={() => {
           active === category.id ? setActive(0) : setActive(category.id);
         }}
-        leftIcon={category.icon ?? <DotIcon color="black" size={16} />}
+        leftIcon={category.icon ?? <DotIcon color="black" size={18} />}
         rightIcon={
           <ChevronRight
-            className={`h-5 w-5 transition-all ${
+            className={`h-3.5 w-3.5 transition-all ${
               active === category.id ? "rotate-90" : ""
             }`}
           />
-        }>
+        }
+      >
         {category.title}
       </SidebarButton>
       <div
@@ -39,12 +40,14 @@ export default function CollapsingMenu({
             category.id === active
               ? `${(buttonHeightRem * 2 + 0.5) * category.children.length}rem`
               : "0rem",
-        }}>
+        }}
+      >
         {category.children.map((child) => (
           <SidebarLink
             key={child.id}
             slug={child.slug}
-            icon={child.icon ?? "dot"}>
+            icon={child.icon ?? "dot"}
+          >
             {child.title}
           </SidebarLink>
         ))}

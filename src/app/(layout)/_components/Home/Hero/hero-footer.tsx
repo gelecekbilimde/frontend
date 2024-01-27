@@ -23,7 +23,8 @@ export default function HeroFooter(): JSX.Element {
     <footer
       className="flex items-center justify-between space-x-6 px-6"
       itemScope
-      itemType="http://schema.org/SocialMediaPosting">
+      itemType="http://schema.org/SocialMediaPosting"
+    >
       <section className="flex items-center space-x-1">
         <Button
           onClick={(event) => {
@@ -33,13 +34,15 @@ export default function HeroFooter(): JSX.Element {
           className="flex h-fit w-fit items-center space-x-2 bg-transparent text-black"
           itemProp="interactionStatistic"
           itemScope
-          itemType="http://schema.org/InteractionCounter">
+          itemType="http://schema.org/InteractionCounter"
+        >
           <span itemProp="interactionType">
             <Heart />
           </span>
           <h1
             className="text-sm font-semibold opacity-60"
-            itemProp="userInteractionCount">
+            itemProp="userInteractionCount"
+          >
             100
           </h1>
         </Button>
@@ -52,13 +55,15 @@ export default function HeroFooter(): JSX.Element {
                     items-center space-x-2 bg-transparent text-black"
           itemProp="interactionStatistic"
           itemScope
-          itemType="http://schema.org/InteractionCounter">
+          itemType="http://schema.org/InteractionCounter"
+        >
           <span itemProp="interactionType">
             <MessageCircle />
           </span>
           <h1
             className="text-sm font-semibold opacity-60"
-            itemProp="userInteractionCount">
+            itemProp="userInteractionCount"
+          >
             100
           </h1>
         </Button>

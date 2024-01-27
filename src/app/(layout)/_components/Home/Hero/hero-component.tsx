@@ -25,13 +25,15 @@ export default function HeroComponent(): JSX.Element {
           key={item.postID}
           itemScope
           itemType="https://schema.org/BlogPosting"
-          className="-z-10 max-w-xl space-y-5 rounded-xl border border-gray/40 bg-white pb-5 dark:bg-black">
+          className="-z-10 max-w-xl space-y-5 rounded-xl border border-gray/40 bg-white pb-5 dark:bg-black"
+        >
           <meta itemProp="wordCount" content="74" />
           <HeroHeader item={item} onPushPage={onPushPage} />
           <div
             onClick={(event) => {
               onPushPage(event, item);
-            }}>
+            }}
+          >
             <HeroSection item={item} />
             <HeroFooter />
           </div>

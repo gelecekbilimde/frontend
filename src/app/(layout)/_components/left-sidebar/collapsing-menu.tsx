@@ -31,7 +31,8 @@ export default function CollapsingMenu({
               active === category.id ? "rotate-90" : ""
             }`}
           />
-        }>
+        }
+      >
         {category.title}
       </SidebarButton>
       <div
@@ -41,12 +42,14 @@ export default function CollapsingMenu({
             category.id === active
               ? `${(buttonHeightRem * 2 + 0.5) * category.children.length}rem`
               : "0rem",
-        }}>
+        }}
+      >
         {category.children.map((child) => (
           <SidebarLink
             key={child.id}
             slug={child.slug}
-            icon={child.icon ?? "dot"}>
+            icon={child.icon ?? "dot"}
+          >
             {child.title}
           </SidebarLink>
         ))}

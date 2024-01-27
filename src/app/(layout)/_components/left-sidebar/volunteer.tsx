@@ -25,8 +25,8 @@ const Volunteer = () => {
       </CardHeader>
       <CardFooter className="text-xs font-bold justify-center bg-green-700 p-3 rounded-b-lg">
         <div className="flex items-center gap-1.5">
-        <p>Hemen Başvur</p>
-        <Icon name="chevrons-right" color="white" size={12} />
+          <p>Hemen Başvur</p>
+          <Icon name="chevrons-right" color="white" size={12} />
         </div>
       </CardFooter>
     </Card>

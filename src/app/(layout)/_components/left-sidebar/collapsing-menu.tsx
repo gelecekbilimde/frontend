@@ -23,11 +23,11 @@ export default function CollapsingMenu({
           active === category.id ? setActive(0) : setActive(category.id);
         }}
         leftIcon={
-          <Icon name={category.icon ?? "dot"} color="black" size={16} />
+          <Icon name={category.icon ?? "dot"} color="black" size={18} />
         }
         rightIcon={
           <ChevronRight
-            className={`h-5 w-5 transition-all ${
+            className={`h-3.5 w-3.5 transition-all ${
               active === category.id ? "rotate-90" : ""
             }`}
           />

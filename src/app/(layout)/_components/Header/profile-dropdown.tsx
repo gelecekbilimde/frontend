@@ -1,3 +1,7 @@
+import { LogOut, Moon, Pencil, Settings, User } from "lucide-react";
+import Link from "next/link";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -6,15 +10,21 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
-import { User, Pencil, Settings, Moon, LogOut } from "lucide-react";
-import Link from "next/link";
-import UserButton from "./user-button";
 
 const ProfileDropdown = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <UserButton />
+        <div className="flex items-center justify-center gap-x-2">
+          <Avatar className="h-10 w-10 border-2 border-primary">
+            <AvatarImage src="/images/avatar.png" alt="@user" />
+            <AvatarFallback>US</AvatarFallback>
+          </Avatar>
+          <div className="flex flex-col">
+            <span className="pt-0.5 font-bold leading-4">Ad Soyad</span>
+            <span className="text-xs text-slate-400">@uid4679512441</span>
+          </div>
+        </div>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <Link href={""}>

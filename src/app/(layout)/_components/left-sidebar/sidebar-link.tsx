@@ -19,7 +19,7 @@ export default function SidebarLink({
 }: Properties): JSX.Element {
   return (
     <Link href={`category/${slug}`}>
-      <SidebarButton leftIcon={icon ?? <DotIcon color="black" size={18} />}>
+      <SidebarButton leftIcon={icon ?? <DotIcon size={18} />}>
         {children}
       </SidebarButton>
     </Link>

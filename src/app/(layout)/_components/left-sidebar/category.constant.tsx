@@ -8,7 +8,7 @@ export const categories: Category[] = [
     order: 0,
     title: "Bilim",
     slug: "bilim",
-    icon: <FlaskConical color="black" size={16} />,
+    icon: <FlaskConical size={16} />,
     children: [
       {
         id: 100,
@@ -45,7 +45,7 @@ export const categories: Category[] = [
     order: 2,
     title: "Felsefe",
     slug: "felsefe",
-    icon: <ScrollText color="black" size={16} />,
+    icon: <ScrollText size={16} />,
     children: [
       {
         id: 300,

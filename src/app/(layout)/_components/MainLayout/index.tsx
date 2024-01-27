@@ -1,10 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import RightSidebar from '@/app/(layout)/_components/right-sidebar';
-import Header from '@/app/(layout)/header';
-import LeftSideBar from '@/app/(layout)/left-sidebar';
+import RightSidebar from "@/app/(layout)/_components/right-sidebar";
+import Header from "@/app/(layout)/header";
+import LeftSideBar from "@/app/(layout)/left-sidebar";
 
-export default function Index({ children }: { children: React.ReactNode }): JSX.Element {
+export default function Index({
+  children,
+}: {
+  children: React.ReactNode;
+}): JSX.Element {
   return (
     <div className="flex w-full max-w-screen-2xl flex-col items-center justify-between">
       <Header />
@@ -20,4 +24,3 @@ export default function Index({ children }: { children: React.ReactNode }): JSX.
     </div>
   );
 }
-

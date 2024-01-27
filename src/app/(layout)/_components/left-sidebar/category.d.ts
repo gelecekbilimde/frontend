@@ -7,5 +7,5 @@ export interface Category {
   slug: string;
   children: Category[];
   isChild?: boolean;
-  icon?: keyof typeof dynamicIconImports;
+  icon?: React.ReactNode;
 }

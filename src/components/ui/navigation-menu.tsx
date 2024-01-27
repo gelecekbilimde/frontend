@@ -15,8 +15,7 @@ const NavigationMenu = React.forwardRef<
       "relative z-10 flex max-w-max flex-1 items-center justify-center",
       className,
     )}
-    {...properties}
-  >
+    {...properties}>
     {children}
     <NavigationMenuViewport />
   </NavigationMenuPrimitive.Root>
@@ -51,8 +50,7 @@ const NavigationMenuTrigger = React.forwardRef<
   <NavigationMenuPrimitive.Trigger
     ref={reference}
     className={cn(navigationMenuTriggerStyle(), "group", className)}
-    {...properties}
-  >
+    {...properties}>
     {children}
     {""}
     <ChevronDown
@@ -108,8 +106,7 @@ const NavigationMenuIndicator = React.forwardRef<
       "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
       className,
     )}
-    {...properties}
-  >
+    {...properties}>
     <div className="relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm bg-slate-200 shadow-md dark:bg-slate-800" />
   </NavigationMenuPrimitive.Indicator>
 ));

@@ -20,8 +20,6 @@ export function DropAction(): JSX.Element {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="z-50 h-fit rotate-90 border-none px-1 py-0 opacity-60"
-        >
           className="z-50 h-fit rotate-90 border-none px-1 py-0 opacity-60">
           <MoreHorizontal size={"18"} />
         </Button>

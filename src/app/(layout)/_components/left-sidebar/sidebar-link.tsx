@@ -1,11 +1,6 @@
 "use client";
 
-import type dynamicIconImports from "lucide-react/dynamicIconImports";
-import Link from "next/link";
-import { type ReactNode } from "react";
-
 import { DotIcon } from "lucide-react";
-import type dynamicIconImports from "lucide-react/dynamicIconImports";
 import Link from "next/link";
 import type { ReactNode } from "react";
 

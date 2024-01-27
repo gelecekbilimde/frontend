@@ -1,16 +1,19 @@
-'use client';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+"use client";
+import { useRouter } from "next/navigation";
+import React from "react";
 
-import HeroData, { type IHero } from './hero.constant';
-import HeroFooter from './hero-footer';
-import HeroHeader from './hero-header';
-import HeroSection from './hero-section';
+import HeroData, { type IHero } from "./hero.constant";
+import HeroFooter from "./hero-footer";
+import HeroHeader from "./hero-header";
+import HeroSection from "./hero-section";
 
 export default function HeroComponent(): JSX.Element {
   const router = useRouter();
 
-  const onPushPage: DivEventProperties = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, item: IHero) => {
+  const onPushPage: DivEventProperties = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    item: IHero,
+  ) => {
     event.stopPropagation();
     router.push(`/${item.authorname}/status/${item.postID}`);
   };
@@ -40,4 +43,7 @@ export default function HeroComponent(): JSX.Element {
   );
 }
 
-type DivEventProperties = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, item: IHero) => void;
+type DivEventProperties = (
+  event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+  item: IHero,
+) => void;

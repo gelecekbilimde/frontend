@@ -1,13 +1,16 @@
-'use client';
+"use client";
 
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from "@tanstack/react-query";
 
-import { getPosts } from '../_services/get-post';
+import { getPosts } from "../_services/get-post";
 
 export default function SinglePost({ id }: { id: number }): JSX.Element {
-  const key = ['posts', id];
+  const key = ["posts", id];
 
-  const { data: post } = useQuery({ queryKey: key, queryFn: async () => await getPosts(id) });
+  const { data: post } = useQuery({
+    queryKey: key,
+    queryFn: async () => await getPosts(id),
+  });
 
   return (
     <div>

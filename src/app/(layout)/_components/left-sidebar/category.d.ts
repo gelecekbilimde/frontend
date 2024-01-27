@@ -1,4 +1,4 @@
-import type dynamicIconImports from 'lucide-react/dynamicIconImports';
+import type dynamicIconImports from "lucide-react/dynamicIconImports";
 
 export interface Category {
   id: number;
@@ -7,5 +7,5 @@ export interface Category {
   slug: string;
   children: Category[];
   isChild?: boolean;
-  icon?: keyof typeof dynamicIconImports;
+  icon?: React.ReactNode;
 }

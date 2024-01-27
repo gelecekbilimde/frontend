@@ -19,8 +19,7 @@ export default function LeftSideBar(): JSX.Element {
               <SidebarLink
                 key={category.id}
                 slug={category.slug}
-                icon={category.icon ?? "dot"}
-              >
+                icon={category.icon}>
                 {category.title}
               </SidebarLink>
             )}

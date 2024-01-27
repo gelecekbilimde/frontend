@@ -9,13 +9,13 @@ const options: NextAuthOptions = {
         username: {
           label: "Username:",
           type: "text",
-          placeholder: "Username"
+          placeholder: "Username",
         },
         password: {
           label: "Password:",
           type: "password",
-          placeholder: "Password"
-        }
+          placeholder: "Password",
+        },
       },
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-expect-error
@@ -26,8 +26,8 @@ const options: NextAuthOptions = {
           credentials?.password === admin.password
           ? admin
           : undefined;
-      }
-    })
+      },
+    }),
   ],
 
   secret: process.env.NEXTAUTH_SECRET,
@@ -35,14 +35,14 @@ const options: NextAuthOptions = {
   pages: {
     signIn: "/signin",
     signOut: "/signout",
-    newUser: "/"
+    newUser: "/",
   },
 
   session: {
     strategy: "jwt",
     maxAge: 7 * 24 * 60 * 60, // 7 days
-    updateAge: 24 * 60 * 60 // 24 hours
-  }
+    updateAge: 24 * 60 * 60, // 24 hours
+  },
 };
 
 export default options;

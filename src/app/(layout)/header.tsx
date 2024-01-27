@@ -1,6 +1,6 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
+import Link from "next/link";
 
 import {
   NavigationMenu,
@@ -8,28 +8,29 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
+} from "@/components/ui/navigation-menu";
+import ProfileDropdown from "./_components/Header/profile-dropdown";
 
 const links = [
   {
     id: 1,
-    name: 'Ana Sayfa',
-    path: '/',
+    name: "Ana Sayfa",
+    path: "/",
   },
   {
     id: 2,
-    name: 'Yazılar',
-    path: '/posts',
+    name: "Yazılar",
+    path: "/posts",
   },
   {
     id: 3,
-    name: 'Video İçerikler',
-    path: '/videos',
+    name: "Video İçerikler",
+    path: "/videos",
   },
   {
     id: 4,
-    name: 'Podcastler',
-    path: '/podcasts',
+    name: "Podcastler",
+    path: "/podcasts",
   },
 ];
 
@@ -43,13 +44,16 @@ export default function Header(): JSX.Element {
             {links.map((link) => (
               <NavigationMenuItem key={link.id}>
                 <Link href={link.path} passHref legacyBehavior>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>{link.name}</NavigationMenuLink>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    {link.name}
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
       </nav>
+      <ProfileDropdown />
     </header>
   );
 }

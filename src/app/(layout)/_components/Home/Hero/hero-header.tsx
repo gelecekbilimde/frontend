@@ -28,7 +28,8 @@ export default function HeroHeader({
               src={item.avatar}
               width={48}
               height={48}
-              alt={`${item.authorname}Avatar`}></Image>
+              alt={`${item.authorname}Avatar`}
+            ></Image>
           ) : (
             <div className="me-3 h-12 w-12 rounded-full bg-gray"></div>
           )}
@@ -38,7 +39,8 @@ export default function HeroHeader({
             itemProp="author"
             itemScope
             itemType="https://schema.org/Person"
-            className="font-semibold">
+            className="font-semibold"
+          >
             <span itemProp="name">
               <Link itemProp="url" href="/">
                 {item.author}
@@ -49,10 +51,12 @@ export default function HeroHeader({
             itemProp="category"
             itemScope
             itemType="https://schema.org/category"
-            className="-mt-1 font-semibold">
+            className="-mt-1 font-semibold"
+          >
             <span
               itemProp="CategoryCode"
-              className="text-sm font-medium opacity-60">
+              className="text-sm font-medium opacity-60"
+            >
               <Link itemProp="url" href="/">
                 {item.category}
               </Link>
@@ -66,13 +70,15 @@ export default function HeroHeader({
           <time
             itemProp="readingTime"
             dateTime="1h1m"
-            className="text-sm font-medium opacity-60">
+            className="text-sm font-medium opacity-60"
+          >
             {item.readingTime} min read
           </time>
           <time
             itemProp="datePublished"
             dateTime="2023-09-05T17:30:57+01:00"
-            className="text-sm font-medium opacity-60">
+            className="text-sm font-medium opacity-60"
+          >
             {item.date}
           </time>
         </div>

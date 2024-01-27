@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
 interface Properties {
   onClick?: () => void;
@@ -7,7 +7,12 @@ interface Properties {
   rightIcon?: ReactNode;
 }
 
-export default function SidebarButton({ onClick, children, leftIcon, rightIcon }: Properties): JSX.Element {
+export default function SidebarButton({
+  onClick,
+  children,
+  leftIcon,
+  rightIcon,
+}: Properties): JSX.Element {
   return (
     <button
       onClick={onClick}

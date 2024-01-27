@@ -1,10 +1,10 @@
 // eslint-disable-next-line import/named
-import { dehydrate, Hydrate } from '@tanstack/react-query';
+import { dehydrate, Hydrate } from "@tanstack/react-query";
 
-import getQueryClient from '@/lib/getQueryClient';
+import getQueryClient from "@/lib/getQueryClient";
 
-import SinglePost from './_components/single-post';
-import { getPosts } from './_services/get-post';
+import SinglePost from "./_components/single-post";
+import { getPosts } from "./_services/get-post";
 
 interface Properties {
   params: {
@@ -12,10 +12,15 @@ interface Properties {
   };
 }
 
-export default async function Post({ params }: Properties): Promise<JSX.Element> {
+export default async function Post({
+  params,
+}: Properties): Promise<JSX.Element> {
   const queryClient = getQueryClient();
 
-  await queryClient.prefetchQuery(['posts', params.id], async () => await getPosts(params.id));
+  await queryClient.prefetchQuery(
+    ["posts", params.id],
+    async () => await getPosts(params.id),
+  );
   const dehydratedState = dehydrate(queryClient);
 
   return (

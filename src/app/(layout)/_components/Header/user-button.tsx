@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { User } from "./user";
+
+import { type User } from "./user";
 
 const UserButton = () => {
   const userData: User = {

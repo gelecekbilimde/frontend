@@ -12,8 +12,9 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import ProfileDropdown from "./_components/Header/profile-dropdown";
 import { cn } from "@/lib/utils";
+
+import ProfileDropdown from "./_components/Header/profile-dropdown";
 
 const links = [
   {
@@ -65,16 +66,7 @@ export default function Header(): JSX.Element {
         <button className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
           <SearchIcon className="h-4 w-4 text-slate-600" />
         </button>
-        <div className="flex items-center justify-center gap-x-2">
-          <Avatar className="h-10 w-10 border-2 border-primary">
-            <AvatarImage src="/images/avatar.png" alt="@user" />
-            <AvatarFallback>US</AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col">
-            <span className="pt-0.5 font-bold leading-4">Ad Soyad</span>
-            <span className="text-xs text-slate-400">@uid4679512441</span>
-          </div>
-        </div>
+        <ProfileDropdown />
       </div>
     </header>
   );

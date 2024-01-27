@@ -3,8 +3,6 @@
 import { ChevronRight, DotIcon } from "lucide-react";
 import { useState } from "react";
 
-import Icon from "@/lib/get-luicide-icon";
-
 import type { Category } from "./category";
 import SidebarButton from "./sidebar-button";
 import SidebarLink from "./sidebar-link";
@@ -22,15 +20,14 @@ export default function CollapsingMenu({
         onClick={() => {
           active === category.id ? setActive(0) : setActive(category.id);
         }}
-        leftIcon={category.icon ?? <DotIcon color="black" size={18} />}
+        leftIcon={category.icon ?? <DotIcon size={18} />}
         rightIcon={
           <ChevronRight
             className={`h-3.5 w-3.5 transition-all ${
               active === category.id ? "rotate-90" : ""
             }`}
           />
-        }
-      >
+        }>
         {category.title}
       </SidebarButton>
       <div
@@ -40,14 +37,9 @@ export default function CollapsingMenu({
             category.id === active
               ? `${(buttonHeightRem * 2 + 0.5) * category.children.length}rem`
               : "0rem",
-        }}
-      >
+        }}>
         {category.children.map((child) => (
-          <SidebarLink
-            key={child.id}
-            slug={child.slug}
-            icon={child.icon ?? "dot"}
-          >
+          <SidebarLink key={child.id} slug={child.slug} icon={child.icon}>
             {child.title}
           </SidebarLink>
         ))}

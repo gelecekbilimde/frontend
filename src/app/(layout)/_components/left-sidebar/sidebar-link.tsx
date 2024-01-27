@@ -4,13 +4,16 @@ import type dynamicIconImports from "lucide-react/dynamicIconImports";
 import Link from "next/link";
 import { type ReactNode } from "react";
 
-import Icon from "@/lib/get-luicide-icon";
+import { DotIcon } from "lucide-react";
+import type dynamicIconImports from "lucide-react/dynamicIconImports";
+import Link from "next/link";
+import type { ReactNode } from "react";
 
 import SidebarButton from "./sidebar-button";
 
 interface Properties {
   slug: string;
-  icon: keyof typeof dynamicIconImports;
+  icon: React.ReactNode;
   children: ReactNode;
 }
 
@@ -21,11 +24,7 @@ export default function SidebarLink({
 }: Properties): JSX.Element {
   return (
     <Link href={`category/${slug}`}>
-      <SidebarButton
-        leftIcon={
-          <Icon className="group-hover:!text-white" name={icon} size={18} />
-        }
-      >
+      <SidebarButton leftIcon={icon ?? <DotIcon color="black" size={18} />}>
         {children}
       </SidebarButton>
     </Link>

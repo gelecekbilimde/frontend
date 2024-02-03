@@ -1,6 +1,7 @@
 import Participation from "./participation";
 import RecentArticles from "./recent-articles";
 import RecentVideos from "./recent-videos";
+import WeeklyHighlights from "./weekly-highlights";
 
 export default function RightSidebar(): JSX.Element {
   return (
@@ -8,6 +9,7 @@ export default function RightSidebar(): JSX.Element {
       {/* <Participation /> */}
       {/* <RecentVideos /> */}
       <RecentArticles />
+      <WeeklyHighlights />
     </div>
   );
 }

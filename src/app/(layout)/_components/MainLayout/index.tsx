@@ -17,7 +17,7 @@ export default function Index({
           <LeftSideBar />
         </div>
         <main className="w-7/8">{children}</main>
-        <div className="w-3/12">
+        <div className="w-2/12">
           <RightSidebar />
         </div>
       </div>

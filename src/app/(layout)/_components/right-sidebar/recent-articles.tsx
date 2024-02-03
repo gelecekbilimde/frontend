@@ -25,12 +25,12 @@ const RecentArticles = () => {
   ];
   return (
     <div className="border-b border-slate-200">
-      <div className="flex gap-1.5 mb-6">
-        <Newspaper />
+      <div className="flex items-center gap-1.5 mb-6">
+        <Newspaper size={19}/>
         <h1 className="text-base font-bold">Son Yayınlananlar</h1>
       </div>
       {articleData.map((article) => (
-        <ArticleComp {...article} />
+        <ArticleComp key={article.title} {...article} />
       ))}
     </div>
   );

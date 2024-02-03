@@ -3,8 +3,8 @@
 import { SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -40,6 +40,9 @@ const links = [
 ];
 
 export default function Header(): JSX.Element {
+  const path = usePathname();
+  console.log("path", path);
+
   return (
     <header className="flex h-20 w-full items-center justify-between">
       <Image src="/images/logo.png" alt="logo" width={200} height={42} />
@@ -50,11 +53,14 @@ export default function Header(): JSX.Element {
               <NavigationMenuItem key={link.id}>
                 <Link href={link.path} passHref legacyBehavior>
                   <NavigationMenuLink
-                    className={cn(
-                      navigationMenuTriggerStyle(),
-                      "!text-black data-[active]:border-b-2 border-primary hover:border-b-2 !rounded-none",
-                    )}>
+                    className={cn(navigationMenuTriggerStyle())}>
                     {link.name}
+                    <div
+                      className={cn(
+                        "absolute top-9 h-1 w-full rounded border-primary group-hover:border-b-4",
+                        link.path === path && "border-b-4",
+                      )}
+                    />
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>

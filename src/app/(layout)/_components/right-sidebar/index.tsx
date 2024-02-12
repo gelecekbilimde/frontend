@@ -1,5 +1,6 @@
 import Footer from "../footer";
 import RecentArticles from "./recent-articles";
+import SpecialTopics from "./special-topics";
 import WeeklyHighlights from "./weekly-highlights";
 
 export default function RightSidebar(): JSX.Element {
@@ -9,6 +10,7 @@ export default function RightSidebar(): JSX.Element {
       {/* <RecentVideos /> */}
       <RecentArticles />
       <WeeklyHighlights />
+      <SpecialTopics />
       <Footer />
     </div>
   );

@@ -1,4 +1,4 @@
-import Layout from "./(layout)/_components/MainLayout";
+import Layout from "../components/layout/main-layout";
 
 export default function NotFound(): JSX.Element {
   return (

@@ -1,7 +1,7 @@
 interface ICategory {
   id: number;
   order: number;
-  title: string;
+  name: string;
   slug: string;
   icon?: string;
   children: Child[];
@@ -9,7 +9,7 @@ interface ICategory {
 interface Child {
   id: number;
   order: number;
-  title: string;
+  name: string;
   slug: string;
   children: any[];
 }

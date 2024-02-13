@@ -23,7 +23,9 @@ export default function SidebarLink({
     <Link href={`category/${slug}`}>
       <SidebarButton
         leftIcon={
-          <GetLuicideIcon name={icon as never} size={18} /> ?? (
+          icon ? (
+            <GetLuicideIcon name={icon as never} size={18} />
+          ) : (
             <DotIcon size={18} />
           )
         }>

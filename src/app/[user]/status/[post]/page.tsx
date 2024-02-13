@@ -1,6 +1,4 @@
-import React from "react";
-
-import MainLayout from "@/app/(layout)/_components/MainLayout";
+import MainLayout from "@/components/layout/main-layout";
 
 export default function Page(): JSX.Element {
   return (

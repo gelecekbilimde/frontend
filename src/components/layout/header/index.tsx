@@ -6,15 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
-import ProfileDropdown from "./_components/Header/profile-dropdown";
+import ProfileDropdown from "./profile-dropdown";
 
 const links = [
   {

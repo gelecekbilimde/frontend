@@ -6,11 +6,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import {
-    NavigationMenu,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    navigationMenuTriggerStyle,
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 
@@ -41,11 +41,12 @@ const links = [
 
 export default function Header(): JSX.Element {
   const path = usePathname();
-  console.log("path", path);
 
   return (
     <header className="flex h-20 w-full items-center justify-between">
-      <Image src="/images/logo.png" alt="logo" width={200} height={42} />
+      <Link href="/">
+        <Image src="/images/logo.png" alt="logo" width={200} height={42} />
+      </Link>
       <nav>
         <NavigationMenu>
           <NavigationMenuList>

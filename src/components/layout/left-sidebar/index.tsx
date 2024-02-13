@@ -4,7 +4,6 @@ import { Fragment } from "react";
 
 import { getCategories } from "./_services/get-categories";
 import CollapsingMenu from "./collapsing-menu";
-import SidebarLink from "./sidebar-link";
 import Volunteer from "./volunteer";
 
 export default function LeftSideBar(): JSX.Element {
@@ -12,23 +11,18 @@ export default function LeftSideBar(): JSX.Element {
     queryFn: getCategories,
   });
 
+  const computedCategories = categories?.list?.filter(
+    (category) => category.parentId === null,
+  );
+
   return (
     <aside>
       <h2 className="text-lg font-bold">#Kategoriler</h2>
       <div className="flex flex-col py-2">
         {!isLoading ? (
-          categories?.list?.content?.map((category) => (
+          computedCategories?.map((category) => (
             <Fragment key={category.id}>
-              {category?.children?.length > 0 ? (
-                <CollapsingMenu key={category.id} category={category} />
-              ) : (
-                <SidebarLink
-                  key={category.id}
-                  slug={category.slug}
-                  icon={category.icon}>
-                  {category.name}
-                </SidebarLink>
-              )}
+              <CollapsingMenu key={category.id} category={category} />
             </Fragment>
           ))
         ) : (

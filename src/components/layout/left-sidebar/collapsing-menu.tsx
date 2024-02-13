@@ -1,21 +1,28 @@
 "use client";
 
+import { useQuery } from "@tanstack/react-query";
 import { ChevronRight, DotIcon } from "lucide-react";
 import { useState } from "react";
 
 import GetLuicideIcon from "@/lib/get-luicide-icon";
 
-import type { Category } from "./category";
+import { getCategories } from "./_services/get-categories";
 import SidebarButton from "./sidebar-button";
 import SidebarLink from "./sidebar-link";
 
 export default function CollapsingMenu({
   category,
 }: {
-  category: Category;
+  category: ICategory;
 }): JSX.Element {
+  const { data: categories } = useQuery({
+    queryFn: getCategories,
+  });
   const [active, setActive] = useState<number>(0);
   const buttonHeightRem = 1.5;
+
+  const parentCategories =
+    categories?.list?.filter((cat) => cat.parentId === category.id) ?? [];
 
   return (
     <>
@@ -29,11 +36,13 @@ export default function CollapsingMenu({
           )
         }
         rightIcon={
-          <ChevronRight
-            className={`h-3.5 w-3.5 transition-all ${
-              active === category.id ? "rotate-90" : ""
-            }`}
-          />
+          parentCategories.length > 0 && (
+            <ChevronRight
+              className={`h-3.5 w-3.5 transition-all ${
+                active === category.id ? "rotate-90" : ""
+              }`}
+            />
+          )
         }>
         {category.name}
       </SidebarButton>
@@ -42,10 +51,10 @@ export default function CollapsingMenu({
         style={{
           maxHeight:
             category.id === active
-              ? `${(buttonHeightRem * 2 + 0.5) * category.children.length}rem`
+              ? `${(buttonHeightRem * 2 + 0.5) * parentCategories.length}rem`
               : "0rem",
         }}>
-        {category.children.map((child) => (
+        {parentCategories?.map((child) => (
           <SidebarLink key={child.id} slug={child.slug} icon={child.icon}>
             {child.name}
           </SidebarLink>

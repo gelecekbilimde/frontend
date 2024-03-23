@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.swiper-pagination{
+    @apply flex gap-7 items-center justify-center z-50 absolute bottom-0 h-20 w-full border-t-2 border-t-white/25 bg-black/30
+}
+
+.swiper-pagination-bullet-active{
+    @apply hidden
+}

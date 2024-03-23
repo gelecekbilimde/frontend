@@ -1,9 +1,11 @@
 import PostCard from "@/components/home/post-card";
+import SwiperComp from "@/components/home/swiper/swiper";
 import MainLayout from "@/components/layout/main-layout/index";
 
 export default function Home(): JSX.Element {
   return (
     <MainLayout>
+      <div><SwiperComp /></div>
       <div className="mx-10 flex flex-col gap-y-7">
         <PostCard
           post={{

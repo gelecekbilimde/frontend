@@ -1,6 +1,6 @@
-import { type User } from '../_types/user';
-import Card from './card';
-import ProfileButtons from './profile-buttons';
+import { type User } from "../_types/user";
+import Card from "./card";
+import ProfileButtons from "./profile-buttons";
 
 export default function ProfileSidebar({ user }: { user: User }): JSX.Element {
   return (
@@ -19,8 +19,9 @@ export default function ProfileSidebar({ user }: { user: User }): JSX.Element {
       <Card col className="gap-4 p-8">
         <h2 className="pb-2 text-lg font-medium">Hakkında</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu nulla, facilisis at vestibulum non,
-          venenatis eu libero. Nulla elementum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis arcu
+          nulla, facilisis at vestibulum non, venenatis eu libero. Nulla
+          elementum.
         </p>
         <div className="grid grid-cols-2">
           {/* TODO: Use icons here */}

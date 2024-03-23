@@ -1,12 +1,12 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 
-import Providers from '@/app/provider';
-import { Toaster } from '@/components/ui/toaster';
+import Providers from "@/app/provider";
+import { Toaster } from "@/components/ui/toaster";
 
-const poppins = Poppins({
+const inter = Inter({
   subsets: ["latin", "latin-ext"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--gb-font-sans",
@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <html className={poppins.className} lang="tr">
-      <body className="flex min-h-screen flex-col items-center overflow-x-hidden px-4">
+    <html className={inter.className} lang="tr">
+      <body className="flex min-h-screen flex-col items-center overflow-x-hidden">
         <Providers>
           {children}
           <Toaster />

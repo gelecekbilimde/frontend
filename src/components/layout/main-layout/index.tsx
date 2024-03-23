@@ -11,7 +11,7 @@ export default function Index({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <div className="flex w-full max-w-screen-2xl flex-col items-center justify-between px-10">
+    <div className="flex w-full max-w-screen-2xl flex-col items-center justify-between px-14">
       <Header />
       <div className="my-10 grid grid-cols-12 gap-x-5">
         <div className="col-span-2">

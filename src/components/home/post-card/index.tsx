@@ -13,7 +13,7 @@ export interface IPostCardProperties {
 
 const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
   return (
-    <div className="flex flex-row gap-x-4 rounded-lg bg-transparent">
+    <div className="flex flex-row gap-x-4 rounded-md bg-transparent">
       <Image
         src="/images/post-image.png"
         className="rounded-md"

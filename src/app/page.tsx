@@ -1,10 +1,12 @@
 import PostCard from "@/components/home/post-card";
+import Carousels from "@/components/home/swiper/swiper";
 import MainLayout from "@/components/layout/main-layout/index";
 
 export default function Home(): JSX.Element {
   return (
-    <MainLayout>
-      <div className="mx-10 flex flex-col gap-y-7">
+    <MainLayout className="flex flex-col gap-y-6">
+      <Carousels />
+      <div className="flex flex-col gap-y-7">
         <PostCard
           post={{
             postId: "1",

@@ -1,11 +1,11 @@
-import { Suspense } from 'react';
+import { Suspense } from "react";
 
-import Header from '@/app/(layout)/header';
+import Header from "@/app/(layout)/header";
 
-import mockData from './_assets/MOCK_DATA.json';
-import ProfileSidebar from './_components/sidebar';
-import Loading from './loading';
-import ProfileHeader from './profile-header';
+import mockData from "./_assets/MOCK_DATA.json";
+import ProfileSidebar from "./_components/sidebar";
+import Loading from "./loading";
+import ProfileHeader from "./profile-header";
 
 interface Properties {
   params: {
@@ -35,7 +35,9 @@ export default function Layout({ children }: Properties): JSX.Element {
             </div>
           </div>
         </main>
-        <div className="col-span-1 hidden md:flex md:flex-col">Right Sidebar</div>
+        <div className="col-span-1 hidden md:flex md:flex-col">
+          Right Sidebar
+        </div>
       </div>
     </div>
   );

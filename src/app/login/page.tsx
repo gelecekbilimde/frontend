@@ -1,8 +1,8 @@
 "use client";
 
-import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 import { useToast } from "@/components/ui/use-toast";
 
@@ -34,7 +34,7 @@ export default function SignIn(): JSX.Element {
 
   return (
     <div className="grid h-screen w-full grid-cols-2">
-      <div className="relative col-span-1 h-full w-full py-20 pl-20">
+      <div className="relative col-span-1 h-full w-full py-20 pl-40 pr-10 md:pl-20 md:pr-14 xl:pl-36">
         <Link href="/">
           <Image src="/images/icon.svg" alt="logo" width={80} height={80} />
         </Link>
@@ -53,7 +53,19 @@ export default function SignIn(): JSX.Element {
           </span>
         </div>
       </div>
-      <div className="col-span-1 h-full">right</div>
+      <div className="col-span-1 flex h-full items-end justify-end">
+        {/* <div className="relative h-full w-[500px]">
+          {" "}
+          <Image
+            src="/images/login_bg.png"
+            alt="login"
+            layout="fill"
+            className="z-10"
+          />
+          <div className="absolute left-14 top-72 z-20 h-48 w-48 rounded bg-white"></div>
+          <div className="absolute left-56 top-28 z-50 h-64 w-48 rounded bg-white"></div>
+        </div> */}
+      </div>
     </div>
   );
 }

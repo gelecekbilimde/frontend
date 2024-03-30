@@ -31,9 +31,11 @@
     "next": "^13.5.6",
     "next-auth": "^4.23.2",
     "react": "^18.2.0",
+    "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.47.0",
     "react-loader-spinner": "^5.4.5",
+    "swiper": "^11.0.6",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7"
   },

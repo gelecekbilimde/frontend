@@ -18,7 +18,7 @@ export default function LeftSideBar(): JSX.Element {
     <aside>
       <h2 className="text-lg font-bold">#Kategoriler</h2>
       <div className="flex flex-col py-2">
-        {/* {!isLoading ? (
+        {!isLoading ? (
           computedCategories?.map((category) => (
             <Fragment key={category.id}>
               <CollapsingMenu key={category.id} category={category} />
@@ -26,7 +26,7 @@ export default function LeftSideBar(): JSX.Element {
           ))
         ) : (
           <p>Categories are loading</p>
-        )} */}
+        )}
       </div>
       <Volunteer />
     </aside>

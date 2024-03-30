@@ -10,8 +10,7 @@ export default function LeftSideBar(): JSX.Element {
   const { data: categories, isLoading } = useQuery({
     queryFn: getCategories,
   });
-
-  const computedCategories = categories?.list?.filter(
+  const computedCategories = categories?.list?.content?.filter(
     (category) => category.parentId === null,
   );
 

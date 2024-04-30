@@ -4,7 +4,6 @@ import React from "react";
 import RightSidebar from "@/components/layout/right-sidebar";
 
 import Header from "../header";
-import LeftSideBar from "../left-sidebar";
 
 export default function Index({
   children,
@@ -18,7 +17,8 @@ export default function Index({
       <Header />
       <div className="my-10 grid grid-cols-12 gap-x-5">
         <div className="col-span-2">
-          <LeftSideBar />
+          Sidebar
+          {/* <LeftSideBar /> */}
         </div>
         <main className={cx("col-span-8 mx-10", className)}>{children}</main>
         <div className="col-span-2">

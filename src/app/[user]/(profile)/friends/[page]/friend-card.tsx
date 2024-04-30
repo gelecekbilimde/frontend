@@ -1,24 +1,32 @@
-'use client';
+"use client";
 
-import { Facebook, Instagram, Linkedin, MoreHorizontal, Twitter } from 'lucide-react';
-import Link from 'next/link';
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  MoreHorizontal,
+  Twitter,
+} from "lucide-react";
+import Link from "next/link";
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import GetLuicideIcon from '@/lib/get-luicide-icon';
+} from "@/components/ui/dropdown-menu";
+import GetLuicideIcon from "@/components/ui/icon";
 
-import Card from '../../_components/card';
-import type { User } from '../../_types/user';
+import Card from "../../_components/card";
+import type { User } from "../../_types/user";
 
 interface Properties {
   friend: User;
 }
 
-export default function FriendCard({ friend: { name, title, socials } }: Properties): JSX.Element {
+export default function FriendCard({
+  friend: { name, title, socials },
+}: Properties): JSX.Element {
   return (
     <Card col className="gap-2">
       <div className="flex w-full justify-end">
@@ -51,16 +59,24 @@ export default function FriendCard({ friend: { name, title, socials } }: Propert
           <p className="text-sm text-zinc-500">{title}</p>
         </div>
         <div className="flex flex-row gap-4">
-          <Link className="hover:opacity-80" href={`https://facebook.com/${socials}`}>
+          <Link
+            className="hover:opacity-80"
+            href={`https://facebook.com/${socials}`}>
             <Facebook size={22} color="#2277f2" />
           </Link>
-          <Link className="hover:opacity-80" href={`https://instagram.com/${socials}`}>
+          <Link
+            className="hover:opacity-80"
+            href={`https://instagram.com/${socials}`}>
             <Instagram size={22} color="#e1306c" />
           </Link>
-          <Link className="hover:opacity-80" href={`https://linkedin.com/in/${socials}`}>
+          <Link
+            className="hover:opacity-80"
+            href={`https://linkedin.com/in/${socials}`}>
             <Linkedin size={22} color="#0a66c2" />
           </Link>
-          <Link className="hover:opacity-80" href={`https://twitter.com/${socials}`}>
+          <Link
+            className="hover:opacity-80"
+            href={`https://twitter.com/${socials}`}>
             <Twitter size={22} color="#1da1f2" />
           </Link>
         </div>

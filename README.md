@@ -42,7 +42,8 @@ pnpm dev
 - [Tanstack Query v4](https://tanstack.com/query/v4/) - A library for managing your application's data.
 - [NextAuth.js](https://next-auth.js.org/) - Authentication for Next.js.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
-- [Lucide](https://lucide.dev/) - Simply beautiful open source icons.
+- [Lucide](https://lucide.dev/) - Simply beautiful open source icons. Deprecated package project
+- [İconify](https://iconify.design/) - Unified icons framework.
 - [Radix UI](https://www.radix-ui.com/) - A collection of open source UI components for building high-quality, accessible design systems and web apps.
 - [shadcn/ui](https://ui.shadcn.com/) - A collection of UI components for React.
 - [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code.

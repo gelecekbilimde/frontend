@@ -1,10 +1,8 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import { ChevronRight, DotIcon } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
-
-import GetLuicideIcon from "@/lib/get-luicide-icon";
 
 import { getCategories } from "./_services/get-categories";
 import SidebarButton from "./sidebar-button";
@@ -32,9 +30,10 @@ export default function CollapsingMenu({
           active === category.id ? setActive(0) : setActive(category.id);
         }}
         leftIcon={
-          <GetLuicideIcon name={category?.icon as never} size={18} /> ?? (
-            <DotIcon size={18} />
-          )
+          <div>test</div>
+          // <Icon name={category?.icon as never} size={18} /> ?? (
+          //   <DotIcon size={18} />
+          // )
         }
         rightIcon={
           parentCategories.length > 0 && (

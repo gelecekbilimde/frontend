@@ -14,7 +14,7 @@ const Volunteer = () => {
         <div className="flex gap-2">
           <Icon name="heart-handshake" color="white" size={42} />
           <CardTitle className="text-base font-bold">
-            Gönüllülük Başvurusu
+            Ekip Arkadaşı Başvurusu
           </CardTitle>
         </div>
         <CardDescription className="text-xs font-medium text-white">

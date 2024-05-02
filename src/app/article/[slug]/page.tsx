@@ -2,6 +2,7 @@
 import { postDetailData } from "./post-detail.constants";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Eye, Heart, Share2 } from "lucide-react";
+import MainLayout from "@/components/layout/main-layout/index";
 import {
   EmailIcon,
   EmailShareButton,
@@ -28,7 +29,7 @@ const Post = () => {
   const [like, setLike] = useState(false);
   const handleClick = () => {like ? setLike(false) : setLike(true)};
   return (
-    <div>
+    <MainLayout>
       <div
         className="h-96 w-full object-cover rounded-md relative"
         style={{
@@ -71,10 +72,10 @@ const Post = () => {
         </div>
         <div className="flex gap-3 items-center">
           <button className="bg-red-500 h-8 w-8 flex items-center justify-center rounded-md" onClick={handleClick}>
-            <Heart color="white" fill={like ? "white" : "#EF4444"} size={19} />
+            <Heart color="white" fill={like ? "#EF4444" : "white"} size={19} />
           </button>
           <Popover>
-            <PopoverTrigger>
+            <PopoverTrigger asChild>
               <button className="bg-green-500 h-8 w-8 flex items-center justify-center rounded-md">
                 <Share2 color="white" size={16} />
               </button>
@@ -121,7 +122,7 @@ const Post = () => {
         {postDetailData.description}
       </section>
       <article className="text-justify">{postDetailData.content}</article>
-    </div>
+    </MainLayout>
   );
 };
 

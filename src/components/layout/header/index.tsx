@@ -23,11 +23,6 @@ const links = [
     path: "/",
   },
   {
-    id: 2,
-    name: "Yazılar",
-    path: "/posts",
-  },
-  {
     id: 3,
     name: "Video İçerikler",
     path: "/videos",

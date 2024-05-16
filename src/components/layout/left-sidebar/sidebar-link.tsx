@@ -27,7 +27,8 @@ export default function SidebarLink({
             // <GetLuicideIcon name={icon as never} size={18} />
             <DotIcon size={18} />
           )
-        }>
+        }
+      >
         {children}
       </SidebarButton>
     </Link>

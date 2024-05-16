@@ -49,7 +49,8 @@ export default function Header(): JSX.Element {
               <NavigationMenuItem key={link.id}>
                 <Link href={link.path} passHref legacyBehavior>
                   <NavigationMenuLink
-                    className={cn(navigationMenuTriggerStyle())}>
+                    className={cn(navigationMenuTriggerStyle())}
+                  >
                     {link.name}
                     <div
                       className={cn(

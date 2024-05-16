@@ -27,7 +27,9 @@ import { useState } from "react";
 const Post = () => {
   const shareUrl = `https://gelecekbilimde.net/${postDetailData.slug}`;
   const [like, setLike] = useState(false);
-  const handleClick = () => {like ? setLike(false) : setLike(true)};
+  const handleClick = () => {
+    like ? setLike(false) : setLike(true);
+  };
   return (
     <MainLayout>
       <div
@@ -35,7 +37,8 @@ const Post = () => {
         style={{
           backgroundImage: `url("${postDetailData.imageUrl}")`,
           backgroundSize: "cover",
-        }}>
+        }}
+      >
         <div className="h-1/3 px-10 py-4 absolute w-full bottom-0 backdrop-blur">
           <div className="flex gap-3">
             <Badge className="bg-green-600 hover:bg-green-600">
@@ -71,7 +74,10 @@ const Post = () => {
           </div>
         </div>
         <div className="flex gap-3 items-center">
-          <button className="bg-red-500 h-8 w-8 flex items-center justify-center rounded-md" onClick={handleClick}>
+          <button
+            className="bg-red-500 h-8 w-8 flex items-center justify-center rounded-md"
+            onClick={handleClick}
+          >
             <Heart color="white" fill={like ? "#EF4444" : "white"} size={19} />
           </button>
           <Popover>

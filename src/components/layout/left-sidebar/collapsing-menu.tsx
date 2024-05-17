@@ -43,7 +43,8 @@ export default function CollapsingMenu({
               }`}
             />
           )
-        }>
+        }
+      >
         {category.name}
       </SidebarButton>
       <div
@@ -53,7 +54,8 @@ export default function CollapsingMenu({
             category.id === active
               ? `${(buttonHeightRem * 2 + 0.5) * parentCategories.length}rem`
               : "0rem",
-        }}>
+        }}
+      >
         {parentCategories?.map((child) => (
           <SidebarLink key={child.id} slug={child.slug} icon={child.icon}>
             {child.name}

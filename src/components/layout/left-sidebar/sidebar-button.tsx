@@ -16,7 +16,8 @@ export default function SidebarButton({
   return (
     <button
       onClick={onClick}
-      className="group my-1 flex h-7 w-full min-w-[160px] items-center justify-between gap-2 rounded-lg bg-cream px-2 py-5 text-sm font-semibold text-black transition-colors duration-200 hover:bg-green-500 hover:!text-white">
+      className="group my-1 flex h-7 w-full min-w-[160px] items-center justify-between gap-2 rounded-lg bg-cream px-2 py-5 text-sm font-semibold text-black transition-colors duration-200 hover:bg-green-500 hover:!text-white"
+    >
       <span className="flex flex-row items-center gap-2">
         {leftIcon}
         {children}

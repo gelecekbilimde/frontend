@@ -10,7 +10,8 @@ const Footer = () => {
           <a
             key={index}
             href={link.url}
-            className="hover:text-gray-700 flex text-xs text-slate-400">
+            className="hover:text-gray-700 flex text-xs text-slate-400"
+          >
             {link.label}
             {index !== footerLinks.length - 1 && (
               <DotIcon className="h-4 w-4" />

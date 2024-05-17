@@ -2,35 +2,34 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
 
-import { useToast } from "@/components/ui/use-toast";
-
-import SignInForm, { type FormInputs } from "./_components/login-form";
+import SignInForm from "./_components/login-form";
 
 export default function SignIn(): JSX.Element {
-  const { toast } = useToast();
+  // const { toast } = useToast();
 
-  const onSubmit: (formData: FormInputs) => void = (formData: FormInputs) => {
-    Promise.resolve(
-      signIn("credentials", {
-        username: formData.username,
-        password: formData.password,
-        callbackUrl: "/",
-        redirect: true,
-      }),
-    )
-      .then(() =>
-        toast({ title: "Success", description: "Başarıyla giriş yaptınız." }),
-      )
-      .catch((error) => {
-        toast({
-          title: "Error",
-          description: error.message,
-          variant: "destructive",
-        });
-      });
-  };
+  // const onSubmit: (formData: FormInputs) => void = (formData: FormInputs) => {
+  //   console.log(formData);
+
+  //   Promise.resolve(
+  //     signIn("credentials", {
+  //       username: formData.username,
+  //       password: formData.password,
+  //       callbackUrl: "/",
+  //       redirect: true,
+  //     }),
+  //   )
+  //     .then(() =>
+  //       toast({ title: "Success", description: "Başarıyla giriş yaptınız." }),
+  //     )
+  //     .catch((error) => {
+  //       toast({
+  //         title: "Error",
+  //         description: error.message,
+  //         variant: "destructive",
+  //       });
+  //     });
+  // };
 
   return (
     <div className="grid h-screen w-full grid-cols-2">

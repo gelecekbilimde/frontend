@@ -1,5 +1,5 @@
-export interface Article{
-    title: string;
-    description: string;
-    imageUrl: string;
+export interface Article {
+  title: string;
+  description: string;
+  imageUrl: string;
 }

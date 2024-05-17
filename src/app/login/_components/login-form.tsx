@@ -72,7 +72,8 @@ export default function SignInForm(): JSX.Element {
           <Button
             variant="link"
             size="sm"
-            className="pl-1 text-sm text-primary">
+            className="pl-1 text-sm text-primary"
+          >
             Giriş Yapın.
           </Button>
         </div>

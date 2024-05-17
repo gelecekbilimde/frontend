@@ -41,7 +41,8 @@ const SwiperComp = () => {
         disableOnInteraction: false,
       }}
       slidesPerView={1}
-      className="mb-2 h-96 w-full rounded-md">
+      className="mb-2 h-96 w-full rounded-md"
+    >
       {swiperData.map((slide, index) => (
         <SwiperSlide
           key={index}
@@ -49,13 +50,15 @@ const SwiperComp = () => {
           style={{
             backgroundImage: `linear-gradient(90deg, rgba(0, 0, 0, 0.1) 25%, rgba(255, 255, 255, 0.1)), url("${slide.imageUrl}")`,
             backgroundSize: "cover",
-          }}>
+          }}
+        >
           <div className="pl-11 pt-14">
             <div className="flex gap-2">
               {/* {slide.categories.map((category, index) => ( */}
               <Badge
                 key={index}
-                className="flex gap-x-1 border !border-[#FFFFFF]/10 !bg-[#FFFFFF]/20 !p-1 !px-1.5 !font-normal">
+                className="flex gap-x-1 border !border-[#FFFFFF]/10 !bg-[#FFFFFF]/20 !p-1 !px-1.5 !font-normal"
+              >
                 <div className="flex items-center justify-center rounded-full bg-white p-1">
                   <Crown className="text-black" size={10} />
                 </div>
@@ -63,7 +66,8 @@ const SwiperComp = () => {
               </Badge>
               <Badge
                 key={index}
-                className="flex gap-x-1 border !border-[#00B73B]/10 !bg-[#00B73B]/20 !p-1 !px-1.5 !font-normal">
+                className="flex gap-x-1 border !border-[#00B73B]/10 !bg-[#00B73B]/20 !p-1 !px-1.5 !font-normal"
+              >
                 <div className="flex items-center justify-center rounded-full bg-white p-1">
                   <FlaskConical className="text-black" size={10} />
                 </div>

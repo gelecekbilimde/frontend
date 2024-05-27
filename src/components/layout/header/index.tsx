@@ -32,6 +32,11 @@ const links = [
     name: "Podcastler",
     path: "/podcasts",
   },
+  {
+    id: 5,
+    name: "İletişim",
+    path: "/contact",
+  },
 ];
 
 export default function Header(): JSX.Element {

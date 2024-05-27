@@ -28,10 +28,6 @@ dist-ssr
 # misc
 *.pem
 .DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
 
 # typescript
 *.tsbuildinfo
@@ -48,5 +44,5 @@ next-env.d.ts
 *.sln
 *.sw?
 
-.env
+
 .eslintcache

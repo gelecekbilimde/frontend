@@ -1,25 +1,25 @@
-[//]: # "Version 0.1"
+[//]: # "Sürüm 0.1"
 
 # Gelecek Bilimde Frontend
 
-Project for the frontend of the Gelecek Bilimde website. It is written in **TypeScript** and **Next.js**. It uses **Tailwind CSS** for styling. It uses **ESLint** and **Prettier** for linting and formatting. It uses **pnpm** for package management.
+Gelecek Bilimde web sitesinin frontend projesi. **TypeScript** ve **Next.js** ile yazılmıştır. Stil için **Tailwind CSS** kullanır. Linting ve formatlama için **ESLint** ve **Prettier** kullanır. Paket yönetimi için **pnpm** kullanır.
 
-It uses **NextAuth.js** for authentication. It uses **Tanstack Query v4** for data fetching. It uses **React Hook Form** for form handling. It uses **Axios** for HTTP requests. It uses **Lucide** for icons. It uses **Radix UI** and **shadcn/ui** for UI components.
+Kimlik doğrulama için **NextAuth.js** kullanır. Veri çekme için **Tanstack Query v4** kullanır. Form işleme için **React Hook Form** kullanır. HTTP istekleri için **Axios** kullanır. İkonlar için **Lucide** kullanır. UI bileşenleri için **Radix UI** ve **shadcn/ui** kullanır.
 
-## Contributing
+## Katkıda Bulunma
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Lütfen kod davranış kurallarımız ve pull request gönderme süreci hakkında detaylar için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
 
-## Getting Started
+## Başlarken
 
-### Prerequisites
+### Gereksinimler
 
-- [Node.js](https://nodejs.org/en/) - Node.js® is a JavaScript runtime built on Chrome's V8 JavaScript engine.
-- [pnpm](https://pnpm.js.org/) - Fast, disk space efficient package manager.
-- [git](https://git-scm.com/) - Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.
-- [Visual Studio Code (Optional)](https://code.visualstudio.com/) - Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.
+- [Node.js](https://nodejs.org/en/) - Node.js®, Chrome'un V8 JavaScript motoru üzerine kurulmuş bir JavaScript çalışma zamanı.
+- [pnpm](https://pnpm.js.org/) - Hızlı, disk alanı verimli paket yöneticisi.
+- [git](https://git-scm.com/) - Git, küçükten çok büyük projelere kadar her şeyi hız ve verimlilikle yönetmek için tasarlanmış ücretsiz ve açık kaynaklı dağıtılmış bir versiyon kontrol sistemidir.
+- [Visual Studio Code (Opsiyonel)](https://code.visualstudio.com/) - Visual Studio Code, modern web ve bulut uygulamaları oluşturmak ve hata ayıklamak için yeniden tanımlanmış ve optimize edilmiş bir kod editörüdür.
 
-### Installing
+### Kurulum
 
 ```bash
 git clone https://github.com/gelecekbilimde/gelecek-bilimde-frontend.git
@@ -27,30 +27,24 @@ cd gelecek-bilimde-frontend
 pnpm i
 ```
 
-### Running
+### Çalıştırma
 
 ```bash
 pnpm dev
 ```
 
-## Built With
+## Kullanılan Teknolojiler
 
-- [Next.js](https://nextjs.org/) - The React Framework for Production.
-- [TypeScript](https://www.typescriptlang.org/) - TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.
-- [Axios](https://axios-http.com) - Promise based HTTP client for the browser and node.js.
-- [React Hook Form](https://react-hook-form.com/) - Performant, flexible and extensible forms with easy-to-use validation.
-- [Tanstack Query v4](https://tanstack.com/query/v4/) - A library for managing your application's data.
-- [NextAuth.js](https://next-auth.js.org/) - Authentication for Next.js.
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom designs.
-- [Lucide](https://lucide.dev/) - Simply beautiful open source icons. Deprecated package project
-- [İconify](https://iconify.design/) - Unified icons framework.
-- [Radix UI](https://www.radix-ui.com/) - A collection of open source UI components for building high-quality, accessible design systems and web apps.
-- [shadcn/ui](https://ui.shadcn.com/) - A collection of UI components for React.
-- [ESLint](https://eslint.org/) - Find and fix problems in your JavaScript code.
-- [Prettier](https://prettier.io/) - Prettier is an opinionated code formatter.
-- [Husky](https://typicode.github.io/husky/) - Husky can prevent bad git commit, git push and more.
-- [lint-staged](https://github.com/okonet/lint-staged) - Run linters against staged git files and don't let bad code slip into the code base!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- [Next.js](https://nextjs.org/) - Üretim için React Çerçevesi.
+- [TypeScript](https://www.typescriptlang.org/) - JavaScript'in tipli bir üst kümesi olan TypeScript, düz JavaScript'e derlenir.
+- [Axios](https://axios-http.com) - Tarayıcı ve Node.js için Promis tabanlı HTTP istemcisi.
+- [React Hook Form](https://react-hook-form.com/) - Yüksek performanslı, esnek ve genişletilebilir formlar ile kolay kullanım sağlayan doğrulama.
+- [Tanstack Query v4](https://tanstack.com/query/v4/) - Uygulamanızın verilerini yönetmek için bir kütüphane.
+- [NextAuth.js](https://next-auth.js.org/) - Next.js için kimlik doğrulama.
+- [Tailwind CSS](https://tailwindcss.com/) - Özel tasarımlar oluşturmak için hızla kullanılan bir yardımcı program ilkeli CSS çerçevesi.
+- [Lucide](https://lucide.dev/) - Basitçe güzel açık kaynak ikonları. Kaldırılan paket projesi
+- [İconify](https://iconify.design/) - Birleşik ikon çerçevesi.
+- [Radix UI](https://www.radix-ui.com/) - Yüksek kaliteli, erişilebilir tasarım sistemleri ve web uygulamaları oluşturmak için açık kaynak UI bileşenleri koleksiyonu.
+- [shadcn/ui](https://ui.shadcn.com/) - React için UI bileşenleri koleksiyonu.
+- [ESLint](https://eslint.org/) - JavaScript kodunuzdaki sorunları bulun ve düzeltin.
+- [Prettier](https://prettier.io/) - Prettier, bir görüşlü kod biçimlendiricisidir.

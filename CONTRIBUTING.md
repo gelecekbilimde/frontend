@@ -8,6 +8,27 @@ Proje **TypeScript** ve **Next.js** ile yazılmıştır. Stil için **Tailwind C
 
 Projeye başlamak için [README.md](../README.md) dosyasındaki adımları takip edebilirsiniz.
 
+### Gereksinimler
+
+- [Node.js](https://nodejs.org/en/) - Node.js®, Chrome'un V8 JavaScript motoru üzerine kurulmuş bir JavaScript çalışma zamanı.
+- [pnpm](https://pnpm.js.org/) - Hızlı, disk alanı verimli paket yöneticisi.
+- [git](https://git-scm.com/) - Git, küçükten çok büyük projelere kadar her şeyi hız ve verimlilikle yönetmek için tasarlanmış ücretsiz ve açık kaynaklı dağıtılmış bir versiyon kontrol sistemidir.
+- [Visual Studio Code (Opsiyonel)](https://code.visualstudio.com/) - Visual Studio Code, modern web ve bulut uygulamaları oluşturmak ve hata ayıklamak için yeniden tanımlanmış ve optimize edilmiş bir kod editörüdür.
+
+### Kurulum
+
+```bash
+git clone https://github.com/gelecekbilimde/gelecek-bilimde-frontend.git
+cd gelecek-bilimde-frontend 
+pnpm i
+```
+
+### Çalıştırma
+
+```bash
+pnpm dev
+```
+
 ### Katkıda Bulunma Kılavuzu
 
 Editör olarak **Visual Studio Code** kullanmanız önerilir. **TypeScript**, **ESLint** ve **Prettier** için uzantı desteği vardır. Proje için önerilen uzantıları yüklemek için **Ctrl+Shift+P** tuşlarına basıp **Extensions: Show Recommended Extensions** yazabilirsiniz.

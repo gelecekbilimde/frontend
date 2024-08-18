@@ -6,6 +6,10 @@ Gelecek Bilimde web sitesinin frontend projesi. **TypeScript** ve **Next.js** il
 
 Kimlik doğrulama için **NextAuth.js** kullanır. Veri çekme için **Tanstack Query v4** kullanır. Form işleme için **React Hook Form** kullanır. HTTP istekleri için **Axios** kullanır. İkonlar için **Lucide** kullanır. UI bileşenleri için **Radix UI** ve **shadcn/ui** kullanır.
 
+## REST-API Postman Koleksiyonu
+
+https://www.postman.com/gelecek-bilimde-team/workspace/gelecek-bilimde/collection/37702250-8bfe54f1-1864-410a-b960-ab4e7122dd3e?action=share&creator=37702250
+
 ## Katkıda Bulunma
 
 Lütfen kod davranış kurallarımız ve pull request gönderme süreci hakkında detaylar için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.

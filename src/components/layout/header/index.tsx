@@ -15,6 +15,7 @@ import {
 import { cn } from "@/lib/utils";
 
 import ProfileDropdown from "./profile-dropdown";
+import CategorySelectDrawer from "../drawers/category-select-drawer";
 
 const links = [
   {
@@ -44,6 +45,7 @@ export default function Header(): JSX.Element {
 
   return (
     <header className="flex h-20 w-full items-center justify-between">
+      <CategorySelectDrawer />
       <Link href="/">
         <Image src="/images/logo.png" alt="logo" width={200} height={42} />
       </Link>

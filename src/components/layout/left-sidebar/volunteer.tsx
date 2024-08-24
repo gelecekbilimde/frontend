@@ -10,7 +10,7 @@ import {
 
 const Volunteer = () => {
   return (
-    <Card className="bg-green-500 text-white">
+    <Card className="bg-green-500 text-white max-lg:hidden">
       <CardHeader>
         <div className="flex gap-2">
           <Icon icon="mdi:heart-hand" color="white" fontSize={42} />

@@ -7,6 +7,31 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 
 import ProfileDropdown from "./profile-dropdown";
+import CategorySelectDrawer from "../drawers/category-select-drawer";
+
+const links = [
+  {
+    id: 1,
+    name: "Ana Sayfa",
+    path: "/",
+  },
+  {
+    id: 3,
+    name: "Video İçerikler",
+    path: "/videos",
+  },
+  {
+    id: 4,
+    name: "Podcastler",
+    path: "/podcasts",
+  },
+  {
+    id: 5,
+    name: "İletişim",
+    path: "/contact",
+  },
+];
+
 import { Navigations, NavigationsVariant } from "./navigations";
 import { useState } from "react";
 
@@ -18,8 +43,8 @@ export default function Header(): JSX.Element {
   };
 
   return (
-    <>
-      <header className="flex h-20 w-full items-center justify-between">
+    <header className="flex h-20 w-full items-center justify-between">
+      <CategorySelectDrawer />
       <Link href="/">
         <Image src="/images/logo.png" alt="logo" width={200} height={42} />
       </Link>

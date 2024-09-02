@@ -57,6 +57,7 @@ export const Navigations = ({ variant }: { variant: NavigationsVariant }) => {
                   className={cn(
                     "absolute top-9 h-1 w-full rounded border-primary group-hover:border-b-4 ml-3",
                     link.path === path && "border-b-4",
+                    variant === NavigationsVariant.Mobile && "ml-3"
                   )}
                 />
               </NavigationMenuLink>

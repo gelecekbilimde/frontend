@@ -55,7 +55,7 @@ export const Navigations = ({ variant }: { variant: NavigationsVariant }) => {
                 {link.name}
                 <div
                   className={cn(
-                    "absolute top-9 h-1 w-full rounded border-primary group-hover:border-b-4 ml-3",
+                    "absolute top-9 h-1 w-full rounded border-primary group-hover:border-b-4",
                     link.path === path && "border-b-4",
                     variant === NavigationsVariant.Mobile && "ml-3"
                   )}

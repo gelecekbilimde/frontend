@@ -38,7 +38,7 @@ export default function Header(): JSX.Element {
           <ProfileDropdown />
         </div>
         <div className="flex md:hidden">
-          <button className="size-10 mr-2 flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+          <button className="size-10 mr-3 flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <SearchIcon className="size-4 text-slate-600" />
           </button>
           <button
@@ -53,11 +53,14 @@ export default function Header(): JSX.Element {
         onClose={toggleDrawer}
         direction="right"
         className="p-4">
-        <div className="flex flex-col items-center space-y-4">
-          <div className="flex gap-x-5">
+        <div className="flex flex-col justify-between space-y-4">
+          <Link href="/">
+            <Image src="/images/logo.png" alt="logo" width={200} height={42} />
+          </Link>
+          <Navigations variant={NavigationsVariant.Mobile} />
+          <div className="w-full flex justify-center absolute bottom-3 left-0 border-t border-slate-200 pt-3">
             <ProfileDropdown />
           </div>
-          <Navigations variant={NavigationsVariant.Mobile} />
         </div>
       </Drawer>
     </>

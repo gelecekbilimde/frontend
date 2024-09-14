@@ -1,13 +1,20 @@
 import Image from "next/image";
-import { Article } from "./articles";
+
+import { type Article } from "./articles";
 
 const ArticleComp = ({ title, description, imageUrl }: Article) => {
   return (
-    <div className="flex gap-2.5 mb-3">
-      <Image src={imageUrl} alt={title} width={65} height={65} />
-      <div className="flex flex-col gap-1.5 overflow-hidden h-16">
+    <div className="mb-3 flex gap-2.5">
+      <Image
+        src={imageUrl}
+        alt={title}
+        width={65}
+        height={65}
+        className="rounded-sm"
+      />
+      <div className="flex h-16 flex-col gap-1.5 overflow-hidden">
         <h1 className="text-sm font-medium">{title}</h1>
-        <p className="text-xs text-slate-500 truncate">{description}</p>
+        <p className="truncate text-xs text-slate-500">{description}</p>
       </div>
     </div>
   );

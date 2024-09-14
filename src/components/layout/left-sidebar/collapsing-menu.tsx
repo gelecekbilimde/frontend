@@ -1,7 +1,7 @@
 "use client";
 
+import { Icon } from "@iconify/react";
 import { useQuery } from "@tanstack/react-query";
-import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 import { getCategories } from "./_services/get-categories";
@@ -29,22 +29,17 @@ export default function CollapsingMenu({
         onClick={() => {
           active === category.id ? setActive(0) : setActive(category.id);
         }}
-        leftIcon={
-          <div>test</div>
-          // <Icon name={category?.icon as never} size={18} /> ?? (
-          //   <DotIcon size={18} />
-          // )
-        }
+        leftIcon={<Icon icon="mdi:dot" width={18} height={18} />}
         rightIcon={
           parentCategories.length > 0 && (
-            <ChevronRight
-              className={`h-3.5 w-3.5 transition-all ${
+            <Icon
+              icon="mdi:chevron-right"
+              className={`size-3.5 transition-all ${
                 active === category.id ? "rotate-90" : ""
               }`}
             />
           )
-        }
-      >
+        }>
         {category.name}
       </SidebarButton>
       <div
@@ -54,8 +49,7 @@ export default function CollapsingMenu({
             category.id === active
               ? `${(buttonHeightRem * 2 + 0.5) * parentCategories.length}rem`
               : "0rem",
-        }}
-      >
+        }}>
         {parentCategories?.map((child) => (
           <SidebarLink key={child.id} slug={child.slug} icon={child.icon}>
             {child.name}

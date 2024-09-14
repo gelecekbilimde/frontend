@@ -16,9 +16,9 @@ const ProfileDropdown = () => {
     <DropdownMenu>
       <DropdownMenuTrigger>
         <div className="flex items-center justify-center gap-x-2">
-          <Avatar className="h-10 w-10 border-2 border-primary">
+          <Avatar className="size-10 border-2 border-primary">
             <AvatarImage src="/images/avatar.png" alt="@user" />
-            <AvatarFallback>US</AvatarFallback>
+            <AvatarFallback value="US" />
           </Avatar>
           <div className="flex flex-col">
             <span className="pt-0.5 font-bold leading-4">Ad Soyad</span>

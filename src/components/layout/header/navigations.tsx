@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
+
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,7 +10,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export enum NavigationsVariant {
   Desktop = "desktop",
@@ -46,18 +47,23 @@ export const Navigations = ({ variant }: { variant: NavigationsVariant }) => {
       <NavigationMenuList
         className={cn(
           variant === NavigationsVariant.Desktop && "flex-row",
-          variant === NavigationsVariant.Mobile && "flex-col items-start space-x-0",
+          variant === NavigationsVariant.Mobile &&
+            "flex-col items-start space-x-0",
         )}>
         {links.map((link) => (
           <NavigationMenuItem key={link.id}>
             <Link href={link.path} passHref legacyBehavior>
-              <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), variant === NavigationsVariant.Mobile && "text-md px-2")}>
+              <NavigationMenuLink
+                className={cn(
+                  navigationMenuTriggerStyle(),
+                  variant === NavigationsVariant.Mobile && "text-md px-2",
+                )}>
                 {link.name}
                 <div
                   className={cn(
                     "absolute top-9 h-1 w-full rounded border-primary group-hover:border-b-4",
                     link.path === path && "border-b-4",
-                    variant === NavigationsVariant.Mobile && "ml-3"
+                    variant === NavigationsVariant.Mobile && "ml-3",
                   )}
                 />
               </NavigationMenuLink>
@@ -68,4 +74,3 @@ export const Navigations = ({ variant }: { variant: NavigationsVariant }) => {
     </NavigationMenu>
   );
 };
-

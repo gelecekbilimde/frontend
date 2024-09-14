@@ -15,7 +15,7 @@ import ProfileDropdown from "./profile-dropdown";
 export default function Header(): JSX.Element {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
-  const toggleDrawer = () => {
+  const toggleDrawer = (): void => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
@@ -32,18 +32,18 @@ export default function Header(): JSX.Element {
         </nav>
 
         <div className="hidden flex-row-reverse gap-x-5 md:flex md:flex-row">
-          <button className="size-10 flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+          <button className="flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <SearchIcon className="size-4 text-slate-600" />
           </button>
           <ProfileDropdown />
         </div>
         <div className="flex md:hidden">
-          <button className="size-10 mr-3 flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+          <button className="mr-3 flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <SearchIcon className="size-4 text-slate-600" />
           </button>
           <button
             onClick={toggleDrawer}
-            className="size-10 flex items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+            className="flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <MenuIcon className="size-4 text-slate-600" />
           </button>
         </div>
@@ -58,7 +58,7 @@ export default function Header(): JSX.Element {
             <Image src="/images/logo.png" alt="logo" width={200} height={42} />
           </Link>
           <Navigations variant={NavigationsVariant.Mobile} />
-          <div className="w-full flex justify-center absolute bottom-3 left-0 border-t border-slate-200 pt-3">
+          <div className="absolute bottom-3 left-0 flex w-full justify-center border-t border-slate-200 pt-3">
             <ProfileDropdown />
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { Newspaper } from "lucide-react";
+
 import ArticleComp from "./article";
-import { Article } from "./articles";
+import { type Article } from "./articles";
 
 const RecentArticles = () => {
   const articleData: Article[] = [
@@ -25,7 +26,7 @@ const RecentArticles = () => {
   ];
   return (
     <div className="border-b border-slate-200">
-      <div className="flex items-center gap-1.5 mb-6">
+      <div className="mb-6 flex items-center gap-1.5">
         <Newspaper size={19} />
         <h1 className="text-base font-bold">Son Yayınlananlar</h1>
       </div>

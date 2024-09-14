@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 "use client";
-import { postDetailData } from "./post-detail.constants";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useQuery } from "@tanstack/react-query";
 import { Eye, Heart, Share2 } from "lucide-react";
-import MainLayout from "@/components/layout/main-layout/index";
+import Image from "next/image";
+import { useParams } from "next/navigation";
+import { useState } from "react";
 import {
   EmailIcon,
   EmailShareButton,
@@ -16,77 +18,91 @@ import {
   XIcon,
 } from "react-share";
 
+import MainLayout from "@/components/layout/main-layout/index";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Badge } from "../../../components/ui/badge";
-import { useState } from "react";
+import { defaultPostsConstants } from "@/constants/post.constants";
 
-const Post = () => {
-  const shareUrl = `https://gelecekbilimde.net/${postDetailData.slug}`;
+const PostDetailPage = (): JSX.Element => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["postDetailData"],
+    queryFn: () => {
+      return defaultPostsConstants.find((post) => post.slug === slug);
+    },
+  });
+
+  const parameters = useParams();
+  const slug = parameters.slug as string;
+
+  const shareUrl = `https://gelecekbilimde.net/${slug}`;
   const [like, setLike] = useState(false);
-  const handleClick = () => {
+
+  const handleLike = (): void => {
     like ? setLike(false) : setLike(true);
   };
+
+  if (!data || isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <MainLayout>
-      <div
-        className="h-96 w-full object-cover rounded-md relative"
-        style={{
-          backgroundImage: `url("${postDetailData.imageUrl}")`,
-          backgroundSize: "cover",
-        }}
-      >
-        <div className="h-1/3 px-10 py-4 absolute w-full bottom-0 backdrop-blur">
+      <div className="relative size-full h-[400px] rounded-md object-cover">
+        <Image
+          src={data?.cover}
+          alt={data?.header}
+          className="rounded-md"
+          fill
+        />
+        <div className="absolute bottom-0 h-1/3 w-full p-4">
           <div className="flex gap-3">
             <Badge className="bg-green-600 hover:bg-green-600">
-              {postDetailData.category}
+              {data?.category}
             </Badge>
-            {postDetailData.editorList && (
+            {Boolean(data?.editorList) && (
               <Badge className="bg-violet-700 hover:bg-violet-700">
                 Editör Seçimi
               </Badge>
             )}
           </div>
-          <h1 className="font-bold text-2xl text-white py-3">
-            {postDetailData.header}
-          </h1>
-          <p className="text-slate-300 text-xs">
-            {postDetailData.createdAt} - Ortalama{" "}
-            <span className="font-semibold">{postDetailData.readTime}</span>{" "}
-            okuma süresi
+          <h1 className="py-3 text-2xl font-bold text-white">{data?.header}</h1>
+          <p className="text-xs text-slate-300">
+            {data?.createdAt} - Ortalama{" "}
+            <span className="font-semibold">{data?.readTime}</span> okuma süresi
           </p>
         </div>
       </div>
-      <div className="flex justify-between items-center pt-4">
+      <div className="flex items-center justify-between pt-4">
         <div className="flex items-center gap-3">
-          <Avatar className="h-10 w-10 border-2 border-primary">
+          <Avatar className="size-10 border-2 border-primary">
             <AvatarImage src="/images/avatar.png" alt="@user" />
-            <AvatarFallback>US</AvatarFallback>
+            <AvatarFallback value="US" />
           </Avatar>
           <div className="flex flex-col">
-            <span className="pt-0.5 font-bold leading-5 text-base">
+            <span className="pt-0.5 text-base font-bold leading-5">
               Ad Soyad
             </span>
             <span className="text-xs text-slate-400">Bilimsever</span>
           </div>
         </div>
-        <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
           <button
-            className="bg-red-500 h-8 w-8 flex items-center justify-center rounded-md"
-            onClick={handleClick}
-          >
+            className="flex size-8 items-center justify-center rounded-md bg-red-500"
+            onClick={handleLike}>
             <Heart color="white" fill={like ? "#EF4444" : "white"} size={19} />
           </button>
           <Popover>
             <PopoverTrigger asChild>
-              <button className="bg-green-500 h-8 w-8 flex items-center justify-center rounded-md">
+              <button className="flex size-8 items-center justify-center rounded-md bg-green-500">
                 <Share2 color="white" size={16} />
               </button>
             </PopoverTrigger>
-            <PopoverContent side="top" className="flex gap-1 w-52">
+            <PopoverContent side="top" className="flex w-52 gap-1">
               <FacebookShareButton url={shareUrl}>
                 <FacebookIcon size={32} />
               </FacebookShareButton>
@@ -104,32 +120,31 @@ const Post = () => {
               </EmailShareButton>
             </PopoverContent>
           </Popover>
-          <div className="text-slate-500 flex gap-2 items-center">
+          <div className="flex items-center gap-2 text-slate-500">
             <Eye size={16} />
             <span className="text-xs">
-              <span className="font-bold">{postDetailData.view}</span>{" "}
-              görüntüleme
+              <span className="font-bold">{data?.view}</span> görüntüleme
             </span>
           </div>
         </div>
       </div>
-      <section className="text-sm border-b-2 border-black/20 pt-3 pb-2">
+      <section className="border-b-2 border-black/20 pb-2 pt-3 text-sm">
         <p>
           <span className="font-bold">Yazan: </span>
-          {postDetailData.creator}
+          {data?.creator}
         </p>
         <p>
           <span className="font-bold">Düzenleyen: </span>
-          {postDetailData.editor}
+          {data?.editor}
         </p>
       </section>
-      <section className="pt-2 pb-5 text-justify">
+      <section className="pb-5 pt-2 text-justify">
         <span className="font-bold">Özet: </span>
-        {postDetailData.description}
+        {data?.description}
       </section>
-      <article className="text-justify">{postDetailData.content}</article>
+      <article className="text-justify">{data?.content}</article>
     </MainLayout>
   );
 };
 
-export default Post;
+export default PostDetailPage;

@@ -13,10 +13,10 @@ export interface IPostCardProperties {
 
 const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
   return (
-    <div className="flex flex-row gap-x-4 rounded-md bg-transparent">
+    <div className="flex flex-col sm:flex-row gap-x-4 rounded-md bg-transparent">
       <Image
         src="/images/post-image.png"
-        className="rounded-md"
+        className="rounded-md w-full sm:w-[150px] h-[150px] object-cover"
         alt={post.header}
         width={150}
         height={150}
@@ -32,11 +32,11 @@ const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
               <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <span className="text-sm text-slate-600">{post.creator}</span>
+            <p className="text-sm text-slate-600 truncate max-w-14 md:max-w-full">{post.creator}</p>
           </div>
           <span>
             <span className="text-xs text-slate-500">
-              Tahmini Okuma Süresi:{" "}
+              Okuma Süresi:{" "}
               <span className="font-bold">{post.readTime} dk</span>
             </span>
           </span>
@@ -44,7 +44,7 @@ const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
         <div className="mt-2 flex items-center justify-between">
           <button className="flex items-center gap-x-1 text-sm text-slate-600">
             <BookmarkIcon className="h-4 w-4" />
-            <span>Kaydet ve sonra oku</span>
+            <span>Kaydet</span>
           </button>
           <button className="flex items-center gap-x-3 text-sm text-slate-700">
             Tümünü Gör

@@ -28,8 +28,17 @@ export const defaultPostsConstants: PostDetail[] = [
     header: "Teknolojinin Geleceği",
     description: "Teknolojinin geleceği hakkında bir özet",
     slug: "teknolojinin-gelecegi",
-    content:
-      "Teknolojinin geleceği hakkında detaylı içerik. Teknolojinin hızla gelişmesiyle birlikte, gelecekte bizi nelerin beklediğini tahmin etmek zor olabilir. Ancak, yapay zeka, robotik, biyoteknoloji ve diğer alanlardaki ilerlemeler, yaşam tarzımızı ve iş yapma şeklimizi kökten değiştirebilir. Bu makalede, bu değişikliklerin neler olabileceğini ve bunların topluma nasıl etki edebileceğini inceleyeceğiz.",
+    content: `## Emphasis
+
+**This is bold text**
+
+__This is bold text__
+
+*This is italic text*
+
+_This is italic text_
+
+~~Strikethrough~~`,
     lastProcess: "CREATE",
     cover: "/images/post-image.png",
     label: {},

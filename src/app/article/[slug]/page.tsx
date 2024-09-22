@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Eye, Heart, Share2 } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import {
   EmailIcon,
   EmailShareButton,
@@ -27,6 +27,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { defaultPostsConstants } from "@/constants/post.constants";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 const PostDetailPage = (): JSX.Element => {
   const { data, isLoading } = useQuery({
@@ -142,7 +143,12 @@ const PostDetailPage = (): JSX.Element => {
         <span className="font-bold">Özet: </span>
         {data?.description}
       </section>
-      <article className="text-justify">{data?.content}</article>
+      {/*       <article className="text-justify">{data?.content}</article> */}
+      <article>
+        <Suspense fallback={<>Loading...</>}>
+          <MDXRemote source={data?.content} />
+        </Suspense>
+      </article>
     </MainLayout>
   );
 };

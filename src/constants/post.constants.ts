@@ -28,17 +28,79 @@ export const defaultPostsConstants: PostDetail[] = [
     header: "Teknolojinin Geleceği",
     description: "Teknolojinin geleceği hakkında bir özet",
     slug: "teknolojinin-gelecegi",
-    content: `## Emphasis
+    content: `
+# Başlık 1
+## Başlık 2
+### Başlık 3
+#### Başlık 4
+##### Başlık 5
+###### Başlık 6
 
-**This is bold text**
+---
 
-__This is bold text__
+**Kalın Metin**
 
-*This is italic text*
+*İtalik Metin*
 
-_This is italic text_
+***Kalın ve İtalik Metin***
 
-~~Strikethrough~~`,
+~~Üstü Çizili Metin~~
+
+---
+
+> Bu bir blok alıntıdır.
+
+---
+
+### Liste:
+- Madde 1
+- Madde 2
+  - Alt madde 2.1
+  - Alt madde 2.2
+
+1. Sıralı madde 1
+2. Sıralı madde 2
+   1. Alt madde 2.1
+   2. Alt madde 2.2
+
+---
+
+### Kod blokları:
+\`inline kod\`
+
+\`\`\`javascript
+// Çok satırlı kod örneği
+function helloWorld() {
+  console.log("Hello, World!");
+}
+\`\`\`
+
+---
+
+### Link:
+[Google'a Git](https://www.google.com)
+
+---
+
+### Resim:
+![Resim Açıklaması](/images/post-image.png)
+
+---
+
+### Tablo:
+
+| Başlık 1 | Başlık 2 | Başlık 3 |
+| -------- | -------- | -------- |
+| Satır 1  | Veri 1   | Veri 2   |
+| Satır 2  | Veri 3   | Veri 4   |
+
+---
+
+### Görev Listesi:
+- [x] Görev 1
+- [ ] Görev 2
+- [ ] Görev 3
+`,
     lastProcess: "CREATE",
     cover: "/images/post-image.png",
     label: {},

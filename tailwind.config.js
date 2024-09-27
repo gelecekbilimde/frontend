@@ -63,5 +63,5 @@ export default {
       sans: ["var(--gb-font-sans)"],
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require('@tailwindcss/typography')],
 }

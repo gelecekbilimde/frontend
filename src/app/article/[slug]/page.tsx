@@ -28,6 +28,32 @@ import {
 } from "@/components/ui/popover";
 import { defaultPostsConstants } from "@/constants/post.constants";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { Separator } from "@/components/ui/separator";
+
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+
+const CustomImage = ({ src, alt }: { src: string; alt: string; }) => {
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      width={1000}
+      height={500}
+      layout="responsive"
+      objectFit="cover"
+      className="!h-96"
+    />
+  );
+};
+
+const mdxComponents = {
+  hr: () => {
+    return <Separator />;
+  },
+  img: (props: any) => <CustomImage {...props} />,
+};
 
 const PostDetailPage = (): JSX.Element => {
   const { data, isLoading } = useQuery({
@@ -144,9 +170,18 @@ const PostDetailPage = (): JSX.Element => {
         {data?.description}
       </section>
       {/*       <article className="text-justify">{data?.content}</article> */}
-      <article>
+      <article className="prose">
         <Suspense fallback={<>Loading...</>}>
-          <MDXRemote source={data?.content} />
+          <MDXRemote
+            source={data?.content}
+            options={{
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+              },
+            }}
+            components={mdxComponents}
+          />
         </Suspense>
       </article>
     </MainLayout>

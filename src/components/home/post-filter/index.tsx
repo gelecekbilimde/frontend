@@ -12,7 +12,7 @@ const PostFilter: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<ICategory | null>();
 
   return (
-    <div className="flex gap-x-2">
+    <div className="flex flex-wrap gap-2">
       {categoriesConstants.map((category) => (
         <PostFilterItem
           key={category.id}

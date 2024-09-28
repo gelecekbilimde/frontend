@@ -1,7 +1,7 @@
-/* eslint-disable @typescript-eslint/strict-boolean-expressions */
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { Eye, Heart, Share2 } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Suspense, useState } from "react";
@@ -17,6 +17,9 @@ import {
   TwitterShareButton,
   XIcon,
 } from "react-share";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
 
 import MainLayout from "@/components/layout/main-layout/index";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -26,15 +29,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { defaultPostsConstants } from "@/constants/post.constants";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import { Separator } from "@/components/ui/separator";
+import { defaultPostsConstants } from "@/constants/post.constants";
 
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
-
-const CustomImage = ({ src, alt }: { src: string; alt: string; }) => {
+const CustomImage = ({
+  src,
+  alt,
+}: {
+  src: string;
+  alt: string;
+}): React.ReactNode => {
   return (
     <Image
       src={src}
@@ -52,7 +56,7 @@ const mdxComponents = {
   hr: () => {
     return <Separator />;
   },
-  img: (props: any) => <CustomImage {...props} />,
+  img: (properties: any) => <CustomImage {...properties} />,
 };
 
 const PostDetailPage = (): JSX.Element => {
@@ -106,7 +110,7 @@ const PostDetailPage = (): JSX.Element => {
       </div>
       <div className="flex items-center justify-between pt-4">
         <div className="flex items-center gap-3">
-          <Avatar className="size-10 border-2 border-primary">
+          <Avatar className="border-primary size-10 border-2">
             <AvatarImage src="/images/avatar.png" alt="@user" />
             <AvatarFallback value="US" />
           </Avatar>

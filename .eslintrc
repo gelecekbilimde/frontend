@@ -52,7 +52,7 @@
   ],
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "warn",
-    "@typescript-eslint/strict-boolean-expressions": "warn",
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "import/default": "off",
     "import/named": "off",
@@ -101,12 +101,13 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react-refresh/only-export-components": "off",
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": "off",
+    "simple-import-sort/exports": "off",
     "unicorn/expiring-todo-comments": "off",
     "unicorn/filename-case": "off",
     "unicorn/no-useless-undefined": "warn",
     "unicorn/prevent-abbreviations": "warn",
-    "unicorn/no-negated-condition": "off"
+    "unicorn/no-negated-condition": "off",
+    "tailwindcss/no-custom-classname": "off"
   }
 }

@@ -45,7 +45,7 @@ const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
             </div>
             <div className="flex items-center gap-x-1.5">
               <span className="text-xs text-slate-500">
-                Tahmini Okuma Süresi:{" "}
+                Okuma Süresi:{" "}
                 <span className="font-bold">{post.readTime} dk</span>
               </span>
             </div>
@@ -53,7 +53,7 @@ const PostCard: React.FC<IPostCardProperties> = ({ post }) => {
           <div className="flex flex-row items-center justify-between gap-y-2 md:flex md:gap-y-0">
             <button className="flex items-center gap-x-1 text-sm text-slate-600">
               <BookmarkIcon className="size-4" />
-              <span>Kaydet ve sonra oku</span>
+              <span>Kaydet</span>
             </button>
             <Link
               href={`/article/${post.slug}`}

@@ -38,12 +38,12 @@ export default function Header(): JSX.Element {
           <ProfileDropdown />
         </div>
         <div className="flex md:hidden">
-          <button className="mr-3 flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+          <button className="mr-1 flex size-8 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <SearchIcon className="size-4 text-slate-600" />
           </button>
           <button
             onClick={toggleDrawer}
-            className="flex size-10 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
+            className="flex size-8 items-center justify-center rounded-lg border border-slate-200 bg-slate-100">
             <MenuIcon className="size-4 text-slate-600" />
           </button>
         </div>

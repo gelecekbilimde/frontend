@@ -1,29 +1,27 @@
-[//]: # "Sürüm 0.1"
-
 # Gelecek Bilimde Frontend
 
-Gelecek Bilimde web sitesinin frontend projesi. **TypeScript** ve **Next.js** ile yazılmıştır. Stil için **Tailwind CSS** kullanır. Linting ve formatlama için **ESLint** ve **Prettier** kullanır. Paket yönetimi için **pnpm** kullanır.
+This is the frontend project for the Gelecek Bilimde website, built with TypeScript and Next.js. It utilizes Tailwind CSS for styling, ESLint and Prettier for linting and formatting, and pnpm for package management.
 
-Kimlik doğrulama için **NextAuth.js** kullanır. Veri çekme için **Tanstack Query v4** kullanır. Form işleme için **React Hook Form** kullanır. HTTP istekleri için **Axios** kullanır. İkonlar için **Lucide** kullanır. UI bileşenleri için **Radix UI** ve **shadcn/ui** kullanır.
+For authentication, it uses NextAuth.js. Data fetching is handled by Tanstack Query v4, and forms are managed with React Hook Form. Axios is used for HTTP requests, and icons are provided by Lucide. UI components are built with Radix UI and shadcn/ui.
 
-## REST-API Postman Koleksiyonu
+## REST API Postman Collection
 
-https://www.postman.com/gelecek-bilimde-team/workspace/gelecek-bilimde/collection/37702250-8bfe54f1-1864-410a-b960-ab4e7122dd3e?action=share&creator=37702250
+Access the REST API Postman [here](https://www.postman.com/gelecek-bilimde-team/workspace/gelecek-bilimde/collection/37702250-8bfe54f1-1864-410a-b960-ab4e7122dd3e?action=share&creator=37702250).
 
-## Katkıda Bulunma
+## Contributing
 
-Lütfen kod davranış kurallarımız ve pull request gönderme süreci hakkında detaylar için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasını okuyun.
+Please read our [CONTRIBUTING.md](CONTRIBUTING.md) file for details on our code of conduct and the process for submitting pull requests.
 
-## Başlarken
+## Getting Started
 
-### Gereksinimler
+### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) - Node.js®, Chrome'un V8 JavaScript motoru üzerine kurulmuş bir JavaScript çalışma zamanı.
-- [pnpm](https://pnpm.js.org/) - Hızlı, disk alanı verimli paket yöneticisi.
-- [git](https://git-scm.com/) - Git, küçükten çok büyük projelere kadar her şeyi hız ve verimlilikle yönetmek için tasarlanmış ücretsiz ve açık kaynaklı dağıtılmış bir versiyon kontrol sistemidir.
-- [Visual Studio Code (Opsiyonel)](https://code.visualstudio.com/) - Visual Studio Code, modern web ve bulut uygulamaları oluşturmak ve hata ayıklamak için yeniden tanımlanmış ve optimize edilmiş bir kod editörüdür.
+- [Node.js](https://nodejs.org/en/) - Node.js®, JavaScript runtime built on Chrome’s V8 engine.
+- [pnpm](https://pnpm.js.org/) - Fast and efficient package manager.
+- [git](https://git-scm.com/) - Distributed version control system.
+- [Visual Studio Code (Opsiyonel)](https://code.visualstudio.com/) - Optimized code editor for building and debugging modern web applications.
 
-### Kurulum
+### Installation
 
 ```bash
 git clone https://github.com/gelecekbilimde/gelecek-bilimde-frontend.git
@@ -31,24 +29,25 @@ cd gelecek-bilimde-frontend
 pnpm i
 ```
 
-### Çalıştırma
+### Running the Project
+
+Copy the `.env.example` file to `.env` in the root of the project and fill in the required environment variables:
 
 ```bash
 pnpm dev
 ```
 
-## Kullanılan Teknolojiler
+## Technologies
 
-- [Next.js](https://nextjs.org/) - Üretim için React Çerçevesi.
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript'in tipli bir üst kümesi olan TypeScript, düz JavaScript'e derlenir.
-- [Axios](https://axios-http.com) - Tarayıcı ve Node.js için Promis tabanlı HTTP istemcisi.
-- [React Hook Form](https://react-hook-form.com/) - Yüksek performanslı, esnek ve genişletilebilir formlar ile kolay kullanım sağlayan doğrulama.
-- [Tanstack Query v4](https://tanstack.com/query/v4/) - Uygulamanızın verilerini yönetmek için bir kütüphane.
-- [NextAuth.js](https://next-auth.js.org/) - Next.js için kimlik doğrulama.
-- [Tailwind CSS](https://tailwindcss.com/) - Özel tasarımlar oluşturmak için hızla kullanılan bir yardımcı program ilkeli CSS çerçevesi.
-- [Lucide](https://lucide.dev/) - Basitçe güzel açık kaynak ikonları. Kaldırılan paket projesi
-- [İconify](https://iconify.design/) - Birleşik ikon çerçevesi.
-- [Radix UI](https://www.radix-ui.com/) - Yüksek kaliteli, erişilebilir tasarım sistemleri ve web uygulamaları oluşturmak için açık kaynak UI bileşenleri koleksiyonu.
-- [shadcn/ui](https://ui.shadcn.com/) - React için UI bileşenleri koleksiyonu.
-- [ESLint](https://eslint.org/) - JavaScript kodunuzdaki sorunları bulun ve düzeltin.
-- [Prettier](https://prettier.io/) - Prettier, bir görüşlü kod biçimlendiricisidir.
+- [Next.js](https://nextjs.org/) - Production-grade React framework.
+- [TypeScript](https://www.typescriptlang.org/) - Typed superset of JavaScript.
+- [Axios](https://axios-http.com) - Promise-based HTTP client.
+- [React Hook Form](https://react-hook-form.com/) - Performant form handling and validation library.
+- [Tanstack Query v4](https://tanstack.com/query/v4/) - Powerful data fetching and state management.
+- [NextAuth.js](https://next-auth.js.org/) - Authentication for Next.js applications.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
+- [İconify](https://iconify.design/) - Unified icon framework.
+- [Radix UI](https://www.radix-ui.com/) - Accessible UI components for building high-quality web interfaces.
+- [shadcn/ui](https://ui.shadcn.com/) - Customizable UI components for React.
+- [ESLint](https://eslint.org/) - Tool for identifying and fixing problems in JavaScript code.
+- [Prettier](https://prettier.io/) - Opinionated code formatter to ensure consistent code style.

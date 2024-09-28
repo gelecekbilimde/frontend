@@ -1,24 +1,27 @@
-import { useState } from "react";
-import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
-import LeftSideBar from "../left-sidebar";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import { Button } from "@/components/ui/button";
 
-export default function CategorySelectDrawer() {
+import { Icon } from "@iconify/react/dist/iconify.js";
+import { type ReactNode, useState } from "react";
+import Drawer from "react-modern-drawer";
+
+import LeftSideBar from "../left-sidebar";
+
+export default function CategorySelectDrawer(): ReactNode {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
+  const toggleDrawer = (): void => {
+    setIsOpen((previousState) => !previousState);
   };
   return (
     <div className="lg:hidden">
-      <Button onClick={toggleDrawer} className="bg-inherit hover:bg-inherit">
+      <button
+        onClick={toggleDrawer}
+        className="flex items-center justify-center bg-inherit hover:bg-inherit">
         <Icon
-          icon="material-symbols:menu-rounded"
+          icon="iconamoon:category-light"
           fontSize={24}
-          color="black"
+          className="text-slate-600"
         />
-      </Button>
+      </button>
       <Drawer
         open={isOpen}
         onClose={toggleDrawer}

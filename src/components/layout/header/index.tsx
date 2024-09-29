@@ -5,12 +5,14 @@ import "react-modern-drawer/dist/index.css";
 import { MenuIcon, SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import Drawer from "react-modern-drawer";
 
 import CategorySelectDrawer from "../drawers/category-select-drawer";
 import { Navigations, NavigationsVariant } from "./navigations";
 import ProfileDropdown from "./profile-dropdown";
+import SearchKmenu from "./search-kmenu";
+import { useKmenu } from "kmenu";
 
 export default function Header(): JSX.Element {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -18,6 +20,8 @@ export default function Header(): JSX.Element {
   const toggleDrawer = (): void => {
     setIsDrawerOpen(!isDrawerOpen);
   };
+
+  const { toggle } = useKmenu()
 
   return (
     <>
@@ -48,6 +52,8 @@ export default function Header(): JSX.Element {
           </button>
         </div>
       </header>
+      <button onClick={toggle}>Toggle Menu (⌘K)</button>
+      <SearchKmenu />
       <Drawer
         open={isDrawerOpen}
         onClose={toggleDrawer}

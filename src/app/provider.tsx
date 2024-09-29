@@ -1,3 +1,7 @@
+"use client";
+import { MenuProvider } from "kmenu";
+
+import SearchKmenu from "@/components/layout/header/search-kmenu";
 import AuthProvider from "@/providers/auth-provider";
 import ReactQueryProvider from "@/providers/react-query-provider";
 
@@ -8,7 +12,12 @@ interface Properties {
 export default function Providers({ children }: Properties): JSX.Element {
   return (
     <AuthProvider>
-      <ReactQueryProvider>{children}</ReactQueryProvider>
+      <MenuProvider>
+        <ReactQueryProvider>
+          {children}
+          <SearchKmenu />
+        </ReactQueryProvider>
+      </MenuProvider>
     </AuthProvider>
   );
 }

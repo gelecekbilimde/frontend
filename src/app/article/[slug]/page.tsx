@@ -1,10 +1,9 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
 import { Eye, Heart, Share2 } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import {
   EmailIcon,
   EmailShareButton,
@@ -17,9 +16,6 @@ import {
   TwitterShareButton,
   XIcon,
 } from "react-share";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
 
 import MainLayout from "@/components/layout/main-layout/index";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -29,35 +25,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Separator } from "@/components/ui/separator";
 import { defaultPostsConstants } from "@/constants/post.constants";
-
-const CustomImage = ({
-  src,
-  alt,
-}: {
-  src: string;
-  alt: string;
-}): React.ReactNode => {
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      width={1000}
-      height={500}
-      layout="responsive"
-      objectFit="cover"
-      className="!h-96"
-    />
-  );
-};
-
-const mdxComponents = {
-  hr: () => {
-    return <Separator />;
-  },
-  img: (properties: any) => <CustomImage {...properties} />,
-};
+import { MemoizedMarkdown } from "@/components/article/markdown";
 
 const PostDetailPage = (): JSX.Element => {
   const { data, isLoading } = useQuery({
@@ -74,7 +43,7 @@ const PostDetailPage = (): JSX.Element => {
   const [like, setLike] = useState(false);
 
   const handleLike = (): void => {
-    like ? setLike(false) : setLike(true);
+    setLike((prev) => !prev);
   };
 
   if (!data || isLoading) {
@@ -173,21 +142,7 @@ const PostDetailPage = (): JSX.Element => {
         <span className="font-bold">Özet: </span>
         {data?.description}
       </section>
-      {/*       <article className="text-justify">{data?.content}</article> */}
-      <article className="prose">
-        <Suspense fallback={<>Loading...</>}>
-          <MDXRemote
-            source={data?.content}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-              },
-            }}
-            components={mdxComponents}
-          />
-        </Suspense>
-      </article>
+      <MemoizedMarkdown content={data?.content} />
     </MainLayout>
   );
 };

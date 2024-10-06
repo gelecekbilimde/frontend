@@ -33,86 +33,70 @@ It is recommended to use **Visual Studio Code** as the editor. It has extension 
 
 > The **Prettier** extension is optional because it is already integrated with **lint-staged** and **husky**. The code will be automatically formatted before committing.
 
-## Commit Message Structure
+Commit Message Structure
+Commit messages should comply with the Conventional Commits specification.
 
-Commit messages should comply with the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification.
+<type>: <subject>
 
-`<type>: <subject>`
-
-### Type
-
+#### Type
 It should be one of the following:
 
-* **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-* **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-* **docs**: Documentation only changes
-* **feat**: A new feature
-* **fix**: A bug fix
-* **perf**: A code change that improves performance
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **test**: Adding missing tests or correcting existing tests
-* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+* build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+* ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+* docs: Documentation-only changes
+* feat: A new feature
+* fix: A bug fix
+* perf: A code change that improves performance
+* refactor: A code change that neither fixes a bug nor adds a feature
+* style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
+* test: Adding missing tests or correcting existing tests
+* chore: Changes to the build process or auxiliary tools and libraries, such as documentation generation
 
-### Subject
+#### Subject
 The subject contains a succinct description of the change:
 
-- Write in English.
-- Use the imperative, present tense: "change" not "changed" nor "changes"
-- Do not capitalize the first letter
-- Do not end the subject line with a period (.)
-- Do not include unnecessary details.
+* Write in English.
+* Use the imperative, present tense: "add" not "added" or "adds."
+* Do not capitalize the first letter.
+* Do not end the subject line with a period (.).
+* Do not include unnecessary details.
+* 
+### Examples
+* feat: add signup page
+* fix: fix header navigation issue
+* docs: update API documentation
+
+### Branch Name Guidelines
+
+<type>/<jira-issue-number>/<subject-name>
+
+#### Type
+It should be one of the following:
+
+* feature: Adding a new feature, refactoring a feature, or removing a feature
+* bugfix: A bug fix
+* hotfix: An urgent fix for a bug in production (usually a quick fix for a critical bug)
+* test: Experimenting with new features or technologies
+
+### Subject
+
+The subject contains a succinct description of the change:
+
+* Use kebab-case.
+* Write in English.
+* Use the imperative, present tense: "add" not "added" or "adds."
+* Do not capitalize the first letter.
+* Do not end the subject line with a period (.).
+* Do not include unnecessary details.
 
 ### Examples
 
-```
-feat: add signup page
-```
+* feature/GBS-1/signup-page
 
-```
-fix: fix signup page
-```
+* bugfix/GBS-2/header-navigation
 
-```
-docs: update README.md
-```
+* test/GBS-3/roblox-authentication
 
-## Branch Name Guidelines
-
-`<type>/<subject-name>`
-
-### Type
-
-It should be one of the following:
-
-- **feature**: Adding a new feature, refactoring a feature, or removing a feature
-- **bugfix**: A bug fix
-- **hotfix**: An urgent fix for a bug in production (usually a quick fix for a critical bug)
-- **test**: Experimenting with new features or technologies
-
-### Subject
-The subject contains a succinct description of the change:
-
-- Use kebab-case
-- Write in English.
-- Use the imperative, present tense: "change" not "changed" nor "changes"
-- Do not capitalize the first letter
-- Do not end the subject line with a period (.)
-- Do not include unnecessary details.
-
-### Examples
-
-```
-feature/signup-page
-```
-
-```
-bugfix/header-navigation
-```
-
-```
-test/roblox-authentication
-```
 
 ## Folder Structure
 

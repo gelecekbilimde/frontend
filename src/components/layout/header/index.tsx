@@ -20,8 +20,6 @@ export default function Header(): JSX.Element {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  const { toggle } = useKmenu();
-
   return (
     <>
       <header className="flex h-20 w-full items-center justify-between">
@@ -51,7 +49,6 @@ export default function Header(): JSX.Element {
           </button>
         </div>
       </header>
-      <button onClick={toggle}>Toggle Menu (⌘K)</button>
       <Drawer
         open={isDrawerOpen}
         onClose={toggleDrawer}

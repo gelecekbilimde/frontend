@@ -13,7 +13,7 @@ import { type FC, useState } from "react";
 
 import { defaultPostsConstants } from "../../../constants/post.constants.ts";
 
-const SearchKmenu: FC = () => {
+const CommandPalette: FC = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [postSearchResults, setPostSearchResults] = useState<InnerCommand[]>(
     [],
@@ -97,4 +97,4 @@ const SearchKmenu: FC = () => {
   );
 };
 
-export default SearchKmenu;
+export default CommandPalette;

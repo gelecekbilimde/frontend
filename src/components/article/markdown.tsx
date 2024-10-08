@@ -3,6 +3,7 @@ import { memo, Suspense } from "react";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
+import rehypeSanitize from "rehype-sanitize";
 import Image from "next/image";
 import { Separator } from "../ui/separator";
 
@@ -19,9 +20,7 @@ const CustomImage = ({
         alt={alt}
         width={1000}
         height={500}
-        layout="responsive"
-        objectFit="cover"
-        className="!h-96"
+        className="!h-96 object-cover"
       />
     );
   };
@@ -42,7 +41,7 @@ export const MemoizedMarkdown = memo(({ content }: { content: string }) => {
           options={{
             mdxOptions: {
               remarkPlugins: [remarkGfm],
-              rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
+              rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, rehypeSanitize],
             },
           }}
           components={mdxComponents}

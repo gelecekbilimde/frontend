@@ -1,10 +1,8 @@
 "use client";
 import { useQuery } from "@tanstack/react-query";
-import { Eye, Heart, Share2 } from "lucide-react";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import {
   EmailIcon,
   EmailShareButton,
@@ -17,9 +15,6 @@ import {
   TwitterShareButton,
   XIcon,
 } from "react-share";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
 
 import MainLayout from "@/components/layout/main-layout/index";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -29,35 +24,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Separator } from "@/components/ui/separator";
 import { defaultPostsConstants } from "@/constants/post.constants";
-
-const CustomImage = ({
-  src,
-  alt,
-}: {
-  src: string;
-  alt: string;
-}): React.ReactNode => {
-  return (
-    <Image
-      src={src}
-      alt={alt}
-      width={1000}
-      height={500}
-      layout="responsive"
-      objectFit="cover"
-      className="!h-96"
-    />
-  );
-};
-
-const mdxComponents = {
-  hr: () => {
-    return <Separator />;
-  },
-  img: (properties: any) => <CustomImage {...properties} />,
-};
+import { MemoizedMarkdown } from "@/components/article/markdown";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const PostDetailPage = (): JSX.Element => {
   const { data, isLoading } = useQuery({
@@ -74,7 +43,7 @@ const PostDetailPage = (): JSX.Element => {
   const [like, setLike] = useState(false);
 
   const handleLike = (): void => {
-    like ? setLike(false) : setLike(true);
+    setLike((prev) => !prev);
   };
 
   if (!data || isLoading) {
@@ -125,12 +94,12 @@ const PostDetailPage = (): JSX.Element => {
           <button
             className="flex size-8 items-center justify-center rounded-md bg-red-500"
             onClick={handleLike}>
-            <Heart color="white" fill={like ? "#EF4444" : "white"} size={19} />
+              <Icon icon="ri:heart-fill" color={like ? "#EF4444" : "white"} stroke={like ? "white" : "#EF4444"} strokeWidth={2} height={19} />
           </button>
           <Popover>
             <PopoverTrigger asChild>
               <button className="flex size-8 items-center justify-center rounded-md bg-green-500">
-                <Share2 color="white" size={16} />
+                <Icon icon="lucide:share-2" color="white" height={16} />
               </button>
             </PopoverTrigger>
             <PopoverContent side="top" className="flex w-52 gap-1">
@@ -152,7 +121,7 @@ const PostDetailPage = (): JSX.Element => {
             </PopoverContent>
           </Popover>
           <div className="flex items-center gap-2 text-slate-500">
-            <Eye size={16} />
+            <Icon icon="lucide:eye" height={16} />
             <span className="text-xs">
               <span className="font-bold">{data?.view}</span> görüntüleme
             </span>
@@ -173,21 +142,7 @@ const PostDetailPage = (): JSX.Element => {
         <span className="font-bold">Özet: </span>
         {data?.description}
       </section>
-      {/*       <article className="text-justify">{data?.content}</article> */}
-      <article className="prose">
-        <Suspense fallback={<>Loading...</>}>
-          <MDXRemote
-            source={data?.content}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings],
-              },
-            }}
-            components={mdxComponents}
-          />
-        </Suspense>
-      </article>
+      <MemoizedMarkdown content={data?.content} />
     </MainLayout>
   );
 };

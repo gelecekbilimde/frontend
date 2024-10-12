@@ -29,6 +29,36 @@ pnpm dev
 
 ### Contribution Guide
 
+## How to Contribute
+
+1.  **Clone the Repository**
+    - Visit our GitHub repository and clone it to your local environment.
+
+2. **Create a New Branch**
+    - Create a branch for your contribution.
+    - Ensure your feature branch is associated with the corresponding GitHub issue from our Jira page at gelecekbilimde.atlassian.net/jira
+
+3. **Make Changes**
+    - Implement your changes in the branch you created.
+    - Thoroughly test your changes to ensure they work as expected.
+
+4. **Commit Changes**
+    - Commit your changes with clear and concise messages.
+
+5. **Push Changes**
+    - Push your changes to your forked repository.
+
+6. **Open a Pull Request (PR)**
+    - Open a PR against the main branch of the original repository.
+    - Provide a detailed description of your changes in the PR.
+    - Link relevant issues or discussions in the PR description.
+
+7. **Review and Feedback**
+    - Once your PR is submitted, project maintainers will review it and provide feedback.
+    - Be responsive to feedback and make necessary changes.
+  
+For additional information, our documents can be found on our Confluence page. If you're interested in leading development on an issue and becoming part of our volunteer IT team, you can apply via gelecekbilimde.net/basvur. For feature requests, feel free to mention them in the discussions section.
+
 It is recommended to use **Visual Studio Code** as the editor. It has extension support for **TypeScript**, **ESLint**, and **Prettier**. To install the recommended extensions for the project, you can press **Ctrl+Shift+P** and type **Extensions: Show Recommended Extensions**.
 
 > The **Prettier** extension is optional because it is already integrated with **lint-staged** and **husky**. The code will be automatically formatted before committing.

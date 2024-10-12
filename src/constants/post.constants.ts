@@ -20,6 +20,12 @@ export interface PostDetail {
   view: number;
   cover: string;
   imageUrl: string;
+  references: Reference[];
+}
+
+export interface Reference{
+  title: string;
+  link: string;
 }
 
 export const defaultPostsConstants: PostDetail[] = [
@@ -29,77 +35,23 @@ export const defaultPostsConstants: PostDetail[] = [
     description: "Teknolojinin geleceği hakkında bir özet",
     slug: "teknolojinin-gelecegi",
     content: `
-# Başlık 1
-## Başlık 2
-### Başlık 3
-#### Başlık 4
-##### Başlık 5
-###### Başlık 6
+# Teknolojinin Geleceği
 
----
+Teknoloji, hızla gelişen ve hayatımızın her alanını etkileyen bir güç haline gelmiştir. Gelecekte, bu gelişim ivmesi daha da artacak ve şu alanlarda büyük değişimlere yol açacaktır:
 
-**Kalın Metin**
+## 1. Yapay Zeka (AI) ve Makine Öğrenimi
+Yapay zeka, insanların karmaşık problemleri çözme yeteneğini artırarak daha verimli çözümler üretmeye devam edecektir. Özellikle **sağlık**, **eğitim** ve **finans** gibi sektörlerde devrim niteliğinde yenilikler beklenmektedir.
 
-*İtalik Metin*
+## 2. Nesnelerin İnterneti (IoT)
+IoT, fiziksel cihazların internet üzerinden birbirleriyle iletişim kurmasını sağlar. Gelecekte **akıllı evler**, **şehirler** ve **endüstriler** yaygınlaşacak, günlük yaşamın her alanında otomasyon daha da artacaktır.
 
-***Kalın ve İtalik Metin***
+## 3. Kuantum Bilgisayarlar
+Kuantum bilgisayarlar, klasik bilgisayarlara kıyasla çok daha karmaşık işlemleri gerçekleştirebilme yeteneğine sahiptir. Bu teknoloji, özellikle **kriptografi**, **simülasyon** ve **bilimsel araştırmalar** alanında büyük ilerlemeler sağlayacaktır.
 
-~~Üstü Çizili Metin~~
+## 4. Sürdürülebilir Teknolojiler
+Gelecekte, **yenilenebilir enerji** kaynaklarına dayalı teknolojiler daha fazla önem kazanacaktır. **Güneş enerjisi**, **rüzgar enerjisi** ve **elektrikli araçlar** gibi çözümler, çevre dostu ve sürdürülebilir bir yaşam sunacaktır.
 
----
-
-> Bu bir blok alıntıdır.
-
----
-
-### Liste:
-- Madde 1
-- Madde 2
-  - Alt madde 2.1
-  - Alt madde 2.2
-
-1. Sıralı madde 1
-2. Sıralı madde 2
-   1. Alt madde 2.1
-   2. Alt madde 2.2
-
----
-
-### Kod blokları:
-\`inline kod\`
-
-\`\`\`javascript
-// Çok satırlı kod örneği
-function helloWorld() {
-  console.log("Hello, World!");
-}
-\`\`\`
-
----
-
-### Link:
-[Google'a Git](https://www.google.com)
-
----
-
-### Resim:
-![Resim Açıklaması](/images/post-image.png)
-
----
-
-### Tablo:
-
-| Başlık 1 | Başlık 2 | Başlık 3 |
-| -------- | -------- | -------- |
-| Satır 1  | Veri 1   | Veri 2   |
-| Satır 2  | Veri 3   | Veri 4   |
-
----
-
-### Görev Listesi:
-- [x] Görev 1
-- [ ] Görev 2
-- [ ] Görev 3
+Teknolojinin geleceği, insanların yaşam kalitesini artırmaya yönelik yeniliklerle dolu olacak. Bu gelişmeler, yeni fırsatların yanı sıra, etik ve sosyal sorumluluk gibi konularda da tartışmaları beraberinde getirecektir.
 `,
     lastProcess: "CREATE",
     cover: "/images/post-image.png",
@@ -117,6 +69,24 @@ function helloWorld() {
     readTime: "5 dakika",
     view: 150,
     imageUrl: "/images/tech-future-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "2",
@@ -141,6 +111,24 @@ function helloWorld() {
     readTime: "7 dakika",
     view: 200,
     imageUrl: "/images/ai-effects-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "3",
@@ -165,6 +153,24 @@ function helloWorld() {
     readTime: "6 dakika",
     view: 180,
     imageUrl: "/images/healthy-living-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "4",
@@ -189,6 +195,24 @@ function helloWorld() {
     readTime: "8 dakika",
     view: 220,
     imageUrl: "/images/paris-guide-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "5",
@@ -213,6 +237,24 @@ function helloWorld() {
     readTime: "9 dakika",
     view: 250,
     imageUrl: "/images/entrepreneurship-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "6",
@@ -237,6 +279,24 @@ function helloWorld() {
     readTime: "10 dakika",
     view: 300,
     imageUrl: "/images/digital-marketing-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "7",
@@ -261,6 +321,24 @@ function helloWorld() {
     readTime: "11 dakika",
     view: 350,
     imageUrl: "/images/vegan-recipes-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "8",
@@ -285,6 +363,24 @@ function helloWorld() {
     readTime: "12 dakika",
     view: 400,
     imageUrl: "/images/fashion-trends-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "9",
@@ -309,6 +405,24 @@ function helloWorld() {
     readTime: "13 dakika",
     view: 450,
     imageUrl: "/images/personal-development-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
   {
     postId: "10",
@@ -333,5 +447,23 @@ function helloWorld() {
     readTime: "14 dakika",
     view: 500,
     imageUrl: "/images/financial-freedom-img.png",
+    references: [
+      {
+        title: "[1] Chu, B., Marwaha, K., Sanvictores, T., & Ayers, D. (2022). Physiology, Stress Reaction. National Library of Medicine.",
+        link:"https://www.ncbi.nlm.nih.gov/books/NBK541120/%20"
+      },
+      {
+        title: "[2] Krokstad, S., Langhammer, A., Hveem, K., Holmen, T. L., Midthjell, K., Stene, T. R., Bratberg, G., Heggland, J., & Holmen, J. (2012). Cohort Profile: The HUNT Study, Norway. International Journal of Epidemiology, 42(4), 968–977.",
+        link:"https://doi.org/10.1093/ije/dys095%20"
+      },
+      {
+        title: "[3] Henriksen, R.E., Nilsen, R.M., & Strandberg, R.B. (2022). Loneliness increases the risk of type 2 diabetes: a 20 year follow-up – results from the HUNT study. Diabetologia, 66, 82-92.",
+        link:"https://doi.org/10.1007/s00125-022-05791-6%20"
+      },
+      {
+        title: "[4] Hemoglobin A1C (HbA1c) Test. (n.d.). Medline Plus.",
+        link:"https://www.webmd.com/diabetes/guide/glycated-hemoglobin-test-hba1c%20"
+      },
+    ]
   },
 ];

@@ -27,6 +27,7 @@ import {
 import { defaultPostsConstants } from "@/constants/post.constants";
 import { MemoizedMarkdown } from "@/components/article/markdown";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { References } from "@/components/article/reference";
 
 const PostDetailPage = (): JSX.Element => {
   const { data, isLoading } = useQuery({
@@ -94,7 +95,13 @@ const PostDetailPage = (): JSX.Element => {
           <button
             className="flex size-8 items-center justify-center rounded-md bg-red-500"
             onClick={handleLike}>
-              <Icon icon="ri:heart-fill" color={like ? "#EF4444" : "white"} stroke={like ? "white" : "#EF4444"} strokeWidth={2} height={19} />
+            <Icon
+              icon="ri:heart-fill"
+              color={like ? "#EF4444" : "white"}
+              stroke={like ? "white" : "#EF4444"}
+              strokeWidth={2}
+              height={19}
+            />
           </button>
           <Popover>
             <PopoverTrigger asChild>
@@ -143,6 +150,12 @@ const PostDetailPage = (): JSX.Element => {
         {data?.description}
       </section>
       <MemoizedMarkdown content={data?.content} />
+      <div className="mt-6">
+        <div className="bg-black text-white text-sm inline-flex items-center gap-1 px-2 py-1 rounded-sm">
+          <Icon icon="fa:chain"/> Kaynak
+        </div>
+        {data.references.map((reference)=>(<References key={reference.title} references={reference}/>))}
+      </div>
     </MainLayout>
   );
 };

@@ -8,20 +8,18 @@ import {
   useCommands,
   useKmenu,
 } from "kmenu";
-import { Github, Search, Twitter, Youtube } from "lucide-react";
+import { Github, Instagram, Search, Twitter, Youtube } from "lucide-react";
 import { type FC, useState } from "react";
 
 import { defaultPostsConstants } from "../../../constants/post.constants.ts";
 
 const CommandPalette: FC = () => {
-  const [searchQuery, setSearchQuery] = useState("");
   const [postSearchResults, setPostSearchResults] = useState<InnerCommand[]>(
     [],
   );
   const { setOpen, open } = useKmenu();
 
   const getPostsWithQuery = (query?: string): InnerCommand[] => {
-    setSearchQuery(query ?? "");
 
     const filteredPosts = defaultPostsConstants.filter(
       (defaultPostsConstant) =>
@@ -62,14 +60,17 @@ const CommandPalette: FC = () => {
         {
           icon: <Twitter />,
           text: "Twitter",
+          perform: () => window.open('https://x.com/gelecekbilimde', '_blank'),
         },
         {
-          icon: <Github />,
-          text: "Github",
+          icon: <Instagram />,
+          text: "Instagram",
+          perform: () => window.open('https://www.instagram.com/gelecekbilimde/', '_blank'),
         },
         {
           icon: <Youtube />,
           text: "Youtube",
+          perform: () => window.open('https://www.youtube.com/gelecekbilimde', '_blank'),
         },
       ],
     },

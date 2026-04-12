@@ -111,8 +111,8 @@ importers:
         specifier: ^4.0.0
         version: 4.0.0
       swiper:
-        specifier: ^11.0.6
-        version: 11.1.11
+        specifier: ^12.1.2
+        version: 12.1.2
       tailwind-merge:
         specifier: ^1.14.0
         version: 1.14.0
@@ -3794,8 +3794,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  swiper@11.1.11:
-    resolution: {integrity: sha512-077Aw3OrlZpkkBRf/6+44bGh/HZY/vsLEyate2db2KkJgYUIR5TvDgvvhcJtW/puXzw79w5KBc30DauEX6GZYQ==}
+  swiper@12.1.2:
+    resolution: {integrity: sha512-4gILrI3vXZqoZh71I1PALqukCFgk+gpOwe1tOvz5uE9kHtl2gTDzmYflYCwWvR4LOvCrJi6UEEU+gnuW5BtkgQ==}
     engines: {node: '>= 4.7.0'}
 
   synckit@0.9.1:
@@ -8383,7 +8383,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  swiper@11.1.11: {}
+  swiper@12.1.2: {}
 
   synckit@0.9.1:
     dependencies:

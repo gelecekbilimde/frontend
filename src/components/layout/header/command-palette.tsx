@@ -8,38 +8,28 @@ import {
   useCommands,
   useKmenu,
 } from "kmenu";
-import { Github, Instagram, Search, Twitter, Youtube } from "lucide-react";
-import { type FC, useState } from "react";
+import { Instagram, Search, Twitter, Youtube } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { type FC, useMemo } from "react";
 
 import { defaultPostsConstants } from "../../../constants/post.constants.ts";
 
 const CommandPalette: FC = () => {
-  const [postSearchResults, setPostSearchResults] = useState<InnerCommand[]>(
-    [],
-  );
   const { setOpen, open } = useKmenu();
+  const router = useRouter();
 
-  const getPostsWithQuery = (query?: string): InnerCommand[] => {
-
-    const filteredPosts = defaultPostsConstants.filter(
-      (defaultPostsConstant) =>
-        defaultPostsConstant.header
-          .toLowerCase()
-          .includes(query?.toLowerCase() ?? "") ||
-        defaultPostsConstant.content
-          .toLowerCase()
-          .includes(query?.toLowerCase() ?? ""),
-    );
-    const commands = filteredPosts.map((post) => ({
-      icon: <Search />,
-      text: post.header,
-      perform: () => {
-        // handleSearch(post.header);
-      },
-    }));
-    setPostSearchResults(commands);
-    return commands;
-  };
+  // kmenu yazılan metne göre listeyi kendisi filtreler; burada tüm gönderileri komut olarak veriyoruz.
+  const postSearchResults = useMemo<InnerCommand[]>(
+    () =>
+      defaultPostsConstants.map((post) => ({
+        icon: <Search />,
+        text: post.header,
+        perform: () => {
+          router.push(`/article/${post.slug}`);
+        },
+      })),
+    [router],
+  );
 
   const main: Command[] = [
     {

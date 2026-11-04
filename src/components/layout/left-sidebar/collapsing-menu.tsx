@@ -20,7 +20,7 @@ export default function CollapsingMenu({
   const buttonHeightRem = 1.5;
 
   const parentCategories =
-    categories?.list?.content?.filter((cat) => cat.parentId === category.id) ??
+    categories?.result?.filter((cat) => cat.parentId === category.id) ??
     [];
 
   return (

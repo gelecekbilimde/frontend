@@ -1,41 +1,110 @@
-import type { NextAuthOptions } from "next-auth";
+import type { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+
+import { getApiUrl } from "@/lib/base-fetcher";
+
+interface TokenResult {
+  accessToken: string;
+  refreshToken: string;
+}
+
+interface LoginResponse {
+  isSuccess: boolean;
+  result?: TokenResult;
+}
+
+/**
+ * JWT'nin payload kısmını doğrulamadan okur; yalnızca arayüzde gösterilecek
+ * bilgiler (kullanıcı adı, e-posta vb.) için kullanılır. İmza doğrulaması backend'de yapılır.
+ */
+const decodeJwtPayload = (token: string): Record<string, unknown> => {
+  try {
+    const payload = token.split(".")[1] ?? "";
+    const json = Buffer.from(
+      payload.replaceAll("-", "+").replaceAll("_", "/"),
+      "base64",
+    ).toString("utf8");
+    return JSON.parse(json) as Record<string, unknown>;
+  } catch {
+    return {};
+  }
+};
+
+const asString = (value: unknown): string | undefined =>
+  typeof value === "string" ? value : undefined;
 
 const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
-        username: {
-          label: "Username:",
-          type: "text",
-          placeholder: "Username",
+        email: {
+          label: "E-posta",
+          type: "email",
+          placeholder: "E-posta",
         },
         password: {
-          label: "Password:",
+          label: "Şifre",
           type: "password",
-          placeholder: "Password",
+          placeholder: "Şifre",
         },
       },
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      async authorize(credentials) {
-        // TODO: Implement real authentication
-        const admin = { id: "42", name: "adminuser", password: "adminuser" };
-        return credentials?.username === admin.name &&
-          credentials?.password === admin.password
-          ? admin
-          : undefined;
+      async authorize(credentials): Promise<User | null> {
+        if (!credentials?.email || !credentials.password) {
+          return null;
+        }
+
+        const response = await fetch(getApiUrl("/auth/login"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: credentials.email,
+            password: credentials.password,
+          }),
+        });
+
+        if (!response.ok) {
+          return null;
+        }
+
+        const data = (await response.json()) as LoginResponse;
+        if (!data.isSuccess || !data.result?.accessToken) {
+          return null;
+        }
+
+        const claims = decodeJwtPayload(data.result.accessToken);
+        return {
+          id: asString(claims.userId) ?? credentials.email,
+          email: asString(claims.userMail) ?? credentials.email,
+          name:
+            [asString(claims.userFirstName), asString(claims.userLastName)]
+              .filter(Boolean)
+              .join(" ") || credentials.email,
+          accessToken: data.result.accessToken,
+          refreshToken: data.result.refreshToken,
+        };
       },
     }),
   ],
 
+  callbacks: {
+    jwt({ token, user }) {
+      if (user) {
+        token.accessToken = user.accessToken;
+        token.refreshToken = user.refreshToken;
+      }
+      return token;
+    },
+    session({ session, token }) {
+      session.accessToken = token.accessToken;
+      return session;
+    },
+  },
+
   secret: process.env.NEXTAUTH_SECRET,
 
   pages: {
-    signIn: "/signin",
-    signOut: "/signout",
-    newUser: "/",
+    signIn: "/login",
   },
 
   session: {

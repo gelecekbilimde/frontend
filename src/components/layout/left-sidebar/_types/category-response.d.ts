@@ -1,8 +1,8 @@
 interface ICategory {
   id: number;
   name: string;
-  order: number;
+  orderNumber: number;
   slug: string;
   icon?: string;
-  parentId?: number;
+  parentId?: number | null;
 }

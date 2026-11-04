@@ -7,25 +7,27 @@ import SinglePost from "./_components/single-post";
 import { getPosts } from "./_services/get-post";
 
 interface Properties {
-  params: {
-    id: number;
-  };
+  // Next.js 15'te dinamik rota parametreleri Promise olarak gelir
+  params: Promise<{
+    id: string;
+  }>;
 }
 
 export default async function Post({
   params,
 }: Properties): Promise<JSX.Element> {
+  const id = Number((await params).id);
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery(
-    ["posts", params.id],
-    async () => await getPosts(params.id),
+    ["posts", id],
+    async () => await getPosts(id),
   );
   const dehydratedState = dehydrate(queryClient);
 
   return (
     <Hydrate state={dehydratedState}>
-      <SinglePost id={params.id} />
+      <SinglePost id={id} />
     </Hydrate>
   );
 }

@@ -2,7 +2,6 @@
 
 import "react-modern-drawer/dist/index.css";
 
-import { useKmenu } from "kmenu";
 import { MenuIcon, SearchIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

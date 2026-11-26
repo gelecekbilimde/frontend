@@ -47,4 +47,5 @@ next-env.d.ts
 
 .eslintcache
 
-.env
+.env*
+!.env.example
